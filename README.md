@@ -6,7 +6,7 @@
 
 - 🌱 I’m currently learning **Flutter, Recalling React.js**
 
-- 👯 I’m looking to collaborate on **Startup companies who has enthusiastic in growing their companie**
+- 👯 I’m looking to collaborate on **Startup companies who has interest in growing their companies**
 
 - 🤝 I’m looking for help with **NVDIA Project**
 
