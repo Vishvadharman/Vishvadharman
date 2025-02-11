@@ -49,8 +49,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="30" alt="linux logo"  />
 </div>
 <br>
-<br>
-<br>
+
 
 <h3 align="left">Connect with me:</h3>
 <div align="left">
