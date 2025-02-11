@@ -67,7 +67,9 @@
   </a>
 </div>
 
-
+<div aling="right">
+  ![pepe-greetings-greetings-pepe](https://github.com/user-attachments/assets/f67ffc1c-45ab-4a3c-8285-daa2f83e20f4)
+</div>
 
 <br clear="both">
 <img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/snake.svg" alt="Snake animation" />
