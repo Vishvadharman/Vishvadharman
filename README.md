@@ -71,7 +71,7 @@
 
 
 <br clear="both">
-
+<img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/snake.svg" alt="Snake animation" />
 
 <h3 align="left">Profile Counter:</h3>
 <div align="center">
