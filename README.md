@@ -8,7 +8,7 @@
 
 - 👯 I’m looking to collaborate on **Startup companies who has interest in growing their companies**
 
-- 🤝 I’m looking for help with **NVDIA Project**
+- 🤝 I’m looking for help with **NVIDIA Project**
 
 - 📫 How to reach me **vishvadharmansaminathan@gmail.com**
 
