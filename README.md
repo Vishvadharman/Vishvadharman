@@ -2,9 +2,8 @@
 <h3 align="center">A passionate frontend developer, android developer from India</h3>
 <br><br>
 
-- 🔭 I’m currently working on **Face Recognition Project** (will reveal later)
 
-- 🌱 I’m currently learning **Flutter, Recalling React.js**
+- 🌱 I’m currently learning **Sumo Road Construction Simulator**
 
 - 👯 I’m looking to collaborate on **Startup companies who has interest in growing their companies**
 
