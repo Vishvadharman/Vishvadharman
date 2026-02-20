@@ -3,7 +3,7 @@
 <br><br>
 
 
-- 🌱 I’m currently learning **Sumo Road Construction Simulator**
+- 🌱 I’m currently learning **Drone Logistics**
 
 - 👯 I’m looking to collaborate on **Startup companies who has interest in growing their companies**
 
