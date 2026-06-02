@@ -81,9 +81,8 @@
 ## 🌐 Connect With Me
 
 <p align="center">
-<a href="https://www.linkedin.com/in/vishvasami23/" target="_blank">
-<img src="https://skillicons.dev/icons?i=linkedin" width="50"/>
-</a>
+<a href="https://www.linkedin.com/in/vishvasami23"><img src="https://skillicons.dev/icons?i=linkedin" width="55"></a><a href="mailto:vishvadharmansaminathan@gmail.com"><img src="https://cdn.simpleicons.org/gmail/EA4335" width="55"></a><a href="https://github.com/VISHVADHARMAN"><img src="https://skillicons.dev/icons?i=github" width="55"></a>
+</p>
 
    
 
