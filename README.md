@@ -28,7 +28,7 @@
 
 <img align="right" width="360" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" />
 
-🎓 **B.Tech Computer Science Engineering AI and ML** at **VIT Chennai**
+🎓 **B.Tech CSE Artificial Intelligence and Machine Learning** | **VIT Chennai**
 
 💡 I build intelligent applications that combine **AI, automation, web development, and real-world problem solving**.
 
@@ -43,11 +43,11 @@
 
 🏆 Highlights:
 
-* Runner-Up — **SanDisk Hackathon**
-* Smart India Hackathon Semi-Finalist
-* GSSoC 2026 Contributor
-* 80+ Google Cloud Skill Badges
-* ISRO Certified — Exploration of Solar System
+* 🥈 Runner-Up — **SanDisk Hackathon**
+* 🚀 Smart India Hackathon Semi-Finalist
+* 🌍 GSSoC 2026 Contributor
+* ☁️ 80+ Google Cloud Skill Badges
+* 🛰️ ISRO Certified — Exploration of Solar System
 
 <br clear="right"/>
 
@@ -184,21 +184,23 @@ Autonomous data analysis assistant for answering questions from datasets.
 
 <div align="center">
 
-<img width="48%" src="https://github-readme-stats.vercel.app/api?username=VISHVADHARMAN&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true" />
-<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VISHVADHARMAN&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" />
+<img src="https://github-readme-stats.vercel.app/api?username=VISHVADHARMAN&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true" height="170" />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=VISHVADHARMAN&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" height="170" />
 
 <br/><br/>
 
-<img width="90%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=VISHVADHARMAN&amp;theme=tokyonight" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=tokyo-night&amp;hide_border=true" width="90%" />
 
 </div>
 
+---
 
-## Pacman Contribution Graph
+## Contribution Snake
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph.svg" alt="Pacman contribution graph" />
+<img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/snake.svg" alt="Snake animation" />
 
 </div>
 
