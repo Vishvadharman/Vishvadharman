@@ -17,7 +17,7 @@
 </div>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212744322-6f8d98a6-0f15-4d66-a4e5-cf7e1fd5a39b.gif" width="100%" alt="AI Banner" />
+  <img src="https://user-images.githubusercontent.com/74038190/216656986-6f564d25-e0b9-4b44-9d44-1f91f65d9a3f.gif" width="100%" alt="AI Space Banner" />
 </p>
 
 ## 📌 About Me
@@ -28,6 +28,10 @@
 * 👯 Looking to collaborate on AI-powered products, open-source tools, and real-world automation systems
 * 💡 I enjoy building projects that connect software intelligence with practical impact
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744275-bf9e7ec1-768a-4d6f-bf1b-0d728c4f2f15.gif" width="100%" alt="Divider" />
+</p>
+
 ## 🏆 Highlights
 
 * 🥈 Runner-Up — **SanDisk Hackathon**
@@ -35,6 +39,10 @@
 * 🌍 GSSoC 2026 Contributor
 * ☁️ 80+ Google Cloud Skill Badges
 * 🛰️ ISRO Certified — Exploration of Solar System
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744275-bf9e7ec1-768a-4d6f-bf1b-0d728c4f2f15.gif" width="100%" alt="Divider" />
+</p>
 
 ## 🧠 My Focus Areas
 
@@ -46,6 +54,10 @@
 • IoT Automation and Smart Systems
 • Open Source Development
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744275-bf9e7ec1-768a-4d6f-bf1b-0d728c4f2f15.gif" width="100%" alt="Divider" />
+</p>
+
 ## 🚀 Featured Projects
 
 | Project                             | Description                                                                                  |
@@ -56,6 +68,40 @@
 | **Trust-Aware Pneumonia Detection** | Explainable AI healthcare model focused on trustworthy predictions                           |
 | **Smart IoT Energy Monitoring**     | ESP32-based appliance monitoring and intelligent power usage prediction                      |
 | **AI Data Analyst Agent**           | Autonomous assistant for answering dataset-based questions                                   |
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744275-bf9e7ec1-768a-4d6f-bf1b-0d728c4f2f15.gif" width="100%" alt="Divider" />
+</p>
+
+## 🛠️ Languages and Tools
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,cpp,js,html,css,react,firebase,tensorflow,opencv,fastapi,sqlite,git,github,linux,vscode" alt="Skills" />
+</p>
+
+<p align="center">
+  Python • C++ • JavaScript • React • Firebase • TensorFlow • OpenCV • FastAPI • SQLite • Git • Linux
+</p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744275-bf9e7ec1-768a-4d6f-bf1b-0d728c4f2f15.gif" width="100%" alt="Divider" />
+</p>
+
+## 🌍 Open Source
+
+<p align="center">
+  <img src="https://img.shields.io/badge/GSSoC-2026-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Open%20Source-Contributor-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Pull%20Requests-Active-success?style=for-the-badge" />
+</p>
+
+* Contributing to open-source projects through **GirlScript Summer of Code 2026**
+* Working on bug fixes, testing, UI improvements, documentation, and feature enhancements
+* Interested in AI tools, full-stack apps, developer platforms, and automation systems
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744275-bf9e7ec1-768a-4d6f-bf1b-0d728c4f2f15.gif" width="100%" alt="Divider" />
+</p>
 
 ## 📊 GitHub Stats
 
@@ -77,65 +123,27 @@
   <img height="280em" src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=dracula&amp;radius=10" alt="Activity Graph" />
 </p>
 
-## 🛠️ Languages and Tools
-
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=cpp" height="60" alt="cplusplus logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=js" height="60" alt="javascript logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=html" height="60" alt="html logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=css" height="60" alt="css logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=react" height="60" alt="react logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=tensorflow" height="60" alt="tensorflow logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=opencv" height="60" alt="opencv logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=fastapi" height="60" alt="fastapi logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=sqlite" height="60" alt="sqlite logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=git" height="60" alt="git logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=github" height="60" alt="github logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=linux" height="60" alt="linux logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=vscode" height="60" alt="vscode logo" />
-</div>
-
-## 🌍 Open Source
-
 <p align="center">
-  <img src="https://img.shields.io/badge/GSSoC-2026-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Open%20Source-Contributor-blueviolet?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Pull%20Requests-Active-success?style=for-the-badge" />
+  <img src="https://user-images.githubusercontent.com/74038190/212744275-bf9e7ec1-768a-4d6f-bf1b-0d728c4f2f15.gif" width="100%" alt="Divider" />
 </p>
-
-* Contributing to open-source projects through **GirlScript Summer of Code 2026**
-* Working on bug fixes, testing, UI improvements, documentation, and feature enhancements
-* Interested in AI tools, full-stack apps, developer platforms, and automation systems
 
 ## 🔗 Connect with Me
 
-<p align="left">
+<p align="center">
   <a href="https://www.linkedin.com/in/vishvasami23/" target="_blank">
-    <img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white&amp;color=00FFFF" alt="LinkedIn" />
+    <img src="https://skillicons.dev/icons?i=linkedin" height="50" alt="LinkedIn" />
   </a>
-
+  <img width="20" />
   <a href="mailto:vishvadharmansaminathan@gmail.com" target="_blank">
-    <img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white&amp;color=00FFFF" alt="Gmail" />
+    <img src="https://skillicons.dev/icons?i=gmail" height="50" alt="Gmail" />
   </a>
-
+  <img width="20" />
+  <a href="https://github.com/VISHVADHARMAN" target="_blank">
+    <img src="https://skillicons.dev/icons?i=github" height="50" alt="GitHub" />
+  </a>
+  <img width="20" />
   <a href="https://www.youtube.com/@vishvadharmans8960" target="_blank">
-    <img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&amp;logo=youtube&amp;logoColor=white&amp;color=00FFFF" alt="YouTube" />
+    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&amp;logo=youtube&amp;logoColor=white" height="40" alt="YouTube" />
   </a>
 </p>
 
