@@ -13,7 +13,7 @@
 </div>
 
 <p align="center">
-  <img src="https://media.tenor.com/2uyENRmiUt0AAAAC/coding.gif" width="100%" alt="Coding Banner" />
+  <img src="https://media.tenor.com/2uyENRmiUt0AAAAC/coding.gif" width="70%" alt="Coding Banner" />
 </p>
 
 ---
@@ -66,7 +66,7 @@
 ## 🛠️ Languages and Tools
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,cpp,js,html,css,react,firebase,tensorflow,opencv,fastapi,sqlite,git,github,linux,vscode" alt="Skills" />
+  <img src="https://skillicons.dev/icons?i=python,cpp,js,react,firebase,tensorflow,opencv,fastapi,sqlite,git,github,linux,vscode&amp;perline=7" alt="Skills" />
 </p>
 
 <p align="center">
@@ -111,32 +111,16 @@
 
 ---
 
-## 🔗 Connect With Me
+## 🌐 Connect With Me
 
 <p align="center">
-
-<a href="https://www.linkedin.com/in/vishvasami23/" target="_blank">
-  <img src="https://skillicons.dev/icons?i=linkedin" height="55" alt="LinkedIn" />
-</a>
-
-      
-
-<a href="mailto:vishvadharmansaminathan@gmail.com" target="_blank">
-  <img src="https://cdn.simpleicons.org/gmail/EA4335" height="55" alt="Gmail" />
-</a>
-
-      
-
-<a href="https://github.com/VISHVADHARMAN" target="_blank">
-  <img src="https://skillicons.dev/icons?i=github" height="55" alt="GitHub" />
-</a>
-
-      
-
-<a href="https://www.youtube.com/@vishvadharmans8960" target="_blank">
-  <img src="https://cdn.simpleicons.org/youtube/FF0000" height="55" alt="YouTube" />
-</a>
-
+<a href="https://www.linkedin.com/in/vishvasami23/" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin" height="50" alt="LinkedIn" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="mailto:vishvadharmansaminathan@gmail.com" target="_blank"><img src="https://cdn.simpleicons.org/gmail/EA4335" width="50" alt="Gmail" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/VISHVADHARMAN" target="_blank"><img src="https://skillicons.dev/icons?i=github" height="50" alt="GitHub" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.youtube.com/@vishvadharmans8960" target="_blank"><img src="https://cdn.simpleicons.org/youtube/FF0000" width="50" alt="YouTube" /></a>
 </p>
 
 ---
