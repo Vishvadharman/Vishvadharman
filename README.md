@@ -1,47 +1,28 @@
-<div align="center">
+<h1 align="center">Hey, I'm Vishvadharman Saminathan</h1>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:00C9FF,100:92FE9D&amp;height=220&amp;section=header&amp;text=Vishvadharman%20Saminathan&amp;fontSize=42&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=AI%20and%20ML%20Engineer%20%7C%20Full%20Stack%20Developer%20%7C%20Open%20Source%20Contributor&amp;descAlignY=58&amp;descSize=16" />
+<h3 align="center">AI Engineer • Full Stack Developer • Open Source Contributor</h3>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;weight=600&amp;size=24&amp;pause=1000&amp;color=00C9FF&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Building+AI-powered+systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast" />
+<p align="center">
+  <a href="https://komarev.com/ghpvc/?username=VISHVADHARMAN">
+    <img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&amp;label=Profile%20views&amp;color=00FFFF&amp;style=flat-square" alt="VISHVADHARMAN profile views" />
+  </a>
+</p>
 
-<br/>
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;weight=600&amp;size=22&amp;pause=1000&amp;color=00FFFF&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Building+AI-powered+systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Hackathon+Enthusiast;Open+Source+Contributor" alt="Typing SVG" />
+</p>
 
-<a href="mailto:vishvadharmansaminathan@gmail.com">
-  <img src="https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" />
-</a>
-<a href="https://www.linkedin.com/in/vishvasami23/">
-  <img src="https://img.shields.io/badge/LinkedIn-Vishvadharman-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" />
-</a>
-<a href="https://github.com/VISHVADHARMAN">
-  <img src="https://img.shields.io/badge/GitHub-VISHVADHARMAN-181717?style=for-the-badge&amp;logo=github&amp;logoColor=white" />
-</a>
+<img src="https://i.pinimg.com/originals/ad/fc/cd/adfccd6a72515359c1c283f912b67616.gif" alt="Banner" width="100%" />
 
-<br/><br/>
+## 📌 About Me
 
-<img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&amp;label=Profile%20Views&amp;color=00C9FF&amp;style=for-the-badge" />
+* 🎓 B.Tech CSE Artificial Intelligence and Machine Learning student at **VIT Chennai**
+* 🤖 Passionate about AI engineering, RAG systems, automation, and full-stack AI applications
+* 🌱 Currently exploring **Agentic AI, Computer Vision, Drone Logistics, and Distributed AI Systems**
+* 👯 Looking to collaborate on AI-powered products, open-source tools, and real-world automation systems
+* 💡 I enjoy building projects that connect software intelligence with practical impact
 
-</div>
-
----
-
-## About Me
-
-<img align="right" width="360" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" />
-
-🎓 **B.Tech CSE Artificial Intelligence and Machine Learning** | **VIT Chennai**
-
-💡 I build intelligent applications that combine **AI, automation, web development, and real-world problem solving**.
-
-🚀 Currently exploring:
-
-* Agentic AI Systems
-* Retrieval Augmented Generation
-* Computer Vision
-* Drone Logistics
-* Distributed AI Systems
-* Full Stack AI Applications
-
-🏆 Highlights:
+## 🏆 Highlights
 
 * 🥈 Runner-Up — **SanDisk Hackathon**
 * 🚀 Smart India Hackathon Semi-Finalist
@@ -49,185 +30,119 @@
 * ☁️ 80+ Google Cloud Skill Badges
 * 🛰️ ISRO Certified — Exploration of Solar System
 
-<br clear="right"/>
+## 🧠 My Focus Areas
 
----
+• Retrieval Augmented Generation and AI Agents
+• Machine Learning and Explainable AI
+• Full Stack AI Applications
+• Computer Vision and Intelligent Monitoring
+• Data Analytics and Visualization
+• IoT Automation and Smart Systems
+• Open Source Development
 
-## Current Focus
+## 🚀 Featured Projects
 
-<div align="center">
+| Project                             | Description                                                                                  |
+| ----------------------------------- | -------------------------------------------------------------------------------------------- |
+| **TDS Virtual TA**                  | AI-powered Retrieval Augmented Generation system for IIT Madras Tools in Data Science course |
+| **SnapGraph AI**                    | Upload CSV or Excel files, generate charts, and get AI-powered data insights                 |
+| **Project Drishti**                 | Agentic AI platform for crowd monitoring, risk forecasting, and emergency response           |
+| **Trust-Aware Pneumonia Detection** | Explainable AI healthcare model focused on trustworthy predictions                           |
+| **Smart IoT Energy Monitoring**     | ESP32-based appliance monitoring and intelligent power usage prediction                      |
+| **AI Data Analyst Agent**           | Autonomous assistant for answering dataset-based questions                                   |
 
-| Area            | What I'm Building / Learning                      |
-| --------------- | ------------------------------------------------- |
-| AI Engineering  | RAG systems, AI agents, ML pipelines              |
-| Full Stack      | React, FastAPI, Firebase, SQLite                  |
-| Data Analytics  | Dashboards, insights, automation                  |
-| Computer Vision | Medical AI, crowd monitoring, visual intelligence |
-| Drone Logistics | AI-powered routing and delivery systems           |
+## 📊 GitHub Stats
 
-</div>
+<p align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VISHVADHARMAN&amp;theme=dracula" />
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=VISHVADHARMAN&amp;theme=dracula" />
+</p>
 
----
+<p align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=VISHVADHARMAN&amp;theme=dracula" />
+</p>
 
-## Tech Arsenal
+<p align="center">
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=VISHVADHARMAN&amp;theme=dracula" />
+  <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=VISHVADHARMAN&amp;theme=dracula&amp;utcOffset=5.5" />
+</p>
 
-<div align="center">
+<p align="center">
+  <img height="280em" src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=dracula&amp;radius=10" alt="VISHVADHARMAN Activity Graph" />
+</p>
 
-### Languages
-
-<img src="https://skillicons.dev/icons?i=python,cpp,js,html,css" />
-
-### Frameworks and Libraries
-
-<img src="https://skillicons.dev/icons?i=react,tensorflow,opencv,firebase" />
-
-### Backend and Tools
-
-<img src="https://skillicons.dev/icons?i=fastapi,sqlite,git,github,linux,vscode" />
-
-</div>
-
----
-
-## Featured Projects
-
-<div align="center">
-
-<table>
-<tr>
-<td width="50%">
-
-### TDS Virtual TA
-
-AI-powered **Retrieval Augmented Generation** system for IIT Madras Tools in Data Science course.
-
-**Tech:** FastAPI, SQLite, Embeddings, RAG
-
-</td>
-<td width="50%">
-
-### SnapGraph AI
-
-Upload CSV or Excel files, generate charts, and get AI-powered data insights.
-
-**Tech:** JavaScript, Chart.js, Gemini API
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-### Project Drishti
-
-Agentic AI platform for crowd monitoring, risk forecasting, and emergency response.
-
-**Tech:** Computer Vision, Gemini, Forecasting
-
-</td>
-<td width="50%">
-
-### Trust-Aware Pneumonia Detection
-
-Explainable AI healthcare model focused on trustworthy predictions.
-
-**Tech:** ML, Explainable AI, Healthcare AI
-
-</td>
-</tr>
-
-<tr>
-<td width="50%">
-
-### Smart IoT Energy Monitoring
-
-ESP32-based appliance monitoring and intelligent power usage prediction.
-
-**Tech:** ESP32, IoT, ML
-
-</td>
-<td width="50%">
-
-### AI Data Analyst Agent
-
-Autonomous data analysis assistant for answering questions from datasets.
-
-**Tech:** Python, APIs, Data Analysis
-
-</td>
-</tr>
-</table>
-
-</div>
-
----
-
-## Open Source
+## 🛠️ Languages and Tools
 
 <div align="center">
-
-<img src="https://img.shields.io/badge/GSSoC-2026-orange?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Open%20Source-Contributor-blueviolet?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Pull%20Requests-Active-success?style=for-the-badge" />
-
+  <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=cpp" height="60" alt="cplusplus logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=js" height="60" alt="javascript logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=html" height="60" alt="html logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=css" height="60" alt="css logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=react" height="60" alt="react logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=firebase" height="60" alt="firebase logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=tensorflow" height="60" alt="tensorflow logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=opencv" height="60" alt="opencv logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=fastapi" height="60" alt="fastapi logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=sqlite" height="60" alt="sqlite logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=git" height="60" alt="git logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=github" height="60" alt="github logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=linux" height="60" alt="linux logo" />
+  <img width="12" />
+  <img src="https://skillicons.dev/icons?i=vscode" height="60" alt="vscode logo" />
 </div>
 
-<br/>
+## 🌍 Open Source
+
+<p align="center">
+  <img src="https://img.shields.io/badge/GSSoC-2026-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Open%20Source-Contributor-blueviolet?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Pull%20Requests-Active-success?style=for-the-badge" />
+</p>
 
 * Contributing to open-source projects through **GirlScript Summer of Code 2026**
-* Working on bug fixes, test coverage, UI improvements, and feature enhancements
-* Interested in AI tools, developer platforms, full-stack apps, and automation systems
+* Working on bug fixes, testing, UI improvements, documentation, and feature enhancements
+* Interested in AI tools, full-stack apps, developer platforms, and automation systems
 
----
+## 🔗 Connect with Me
 
-## GitHub Analytics
+<p align="left">
+  <a href="https://www.linkedin.com/in/vishvasami23/" target="_blank">
+    <img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white&amp;color=00FFFF" alt="LinkedIn" />
+  </a>
 
-<div align="center">
+  <a href="mailto:vishvadharmansaminathan@gmail.com" target="_blank">
+    <img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white&amp;color=00FFFF" alt="Gmail" />
+  </a>
 
-<img src="https://github-readme-stats.vercel.app/api?username=VISHVADHARMAN&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true" height="170" />
+  <a href="https://www.youtube.com/@vishvadharmans8960" target="_blank">
+    <img align="center" src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&amp;logo=youtube&amp;logoColor=white&amp;color=00FFFF" alt="YouTube" />
+  </a>
+</p>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=VISHVADHARMAN&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" height="170" />
+## 💬 Quote
 
-<br/><br/>
+> Building intelligent systems that solve real-world problems.
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=tokyo-night&amp;hide_border=true" width="90%" />
+## 🐍 Contribution Snake
 
-</div>
-
----
-
-## Contribution Snake
-
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/snake.svg" alt="Snake animation" />
-
-</div>
-
----
-
-## Connect With Me
+<p align="center">
+  <img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/snake.svg" alt="Snake animation" />
+</p>
 
 <div align="center">
-
-<a href="mailto:vishvadharmansaminathan@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" />
-</a>
-<a href="https://www.linkedin.com/in/vishvasami23/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" />
-</a>
-<a href="https://www.youtube.com/@vishvadharmans8960">
-  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&amp;logo=youtube&amp;logoColor=white" />
-</a>
-
-</div>
-
----
-
-<div align="center">
-
-### Building intelligent systems that solve real-world problems.
-
-<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:92FE9D,100:00C9FF&amp;height=120&amp;section=footer" />
-
+  <img src="https://user-images.githubusercontent.com/74038190/212744287-14f66c13-5458-40dc-9244-8ff533fc8f4a.gif" alt="Bottom Line" width="100%" />
 </div>
