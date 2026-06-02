@@ -1,18 +1,24 @@
-<h1 align="center">Hey, I'm Vishvadharman Saminathan</h1>
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:00FFFF,100:0077FF&amp;height=220&amp;section=header&amp;text=Vishvadharman%20Saminathan&amp;fontSize=42&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=AI%20Engineer%20%7C%20Open%20Source%20Contributor%20%7C%20Hackathon%20Finalist&amp;descAlignY=58&amp;descSize=16" />
 
 <h3 align="center">AI Engineer • Full Stack Developer • Open Source Contributor</h3>
 
 <p align="center">
-  <a href="https://komarev.com/ghpvc/?username=VISHVADHARMAN">
-    <img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&amp;label=Profile%20views&amp;color=00FFFF&amp;style=flat-square" alt="VISHVADHARMAN profile views" />
-  </a>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;weight=600&amp;size=22&amp;pause=1000&amp;color=00FFFF&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Building+AI-powered+Systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast;Always+Learning+Something+New" alt="Typing SVG" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;weight=600&amp;size=22&amp;pause=1000&amp;color=00FFFF&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Building+AI-powered+systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Hackathon+Enthusiast;Open+Source+Contributor" alt="Typing SVG" />
+  <a href="https://komarev.com/ghpvc/?username=VISHVADHARMAN">
+    <img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&amp;label=Profile%20Views&amp;color=00FFFF&amp;style=flat-square" alt="Profile views" />
+  </a>
 </p>
 
-<img src="https://i.pinimg.com/originals/ad/fc/cd/adfccd6a72515359c1c283f912b67616.gif" alt="Banner" width="100%" />
+</div>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212744322-6f8d98a6-0f15-4d66-a4e5-cf7e1fd5a39b.gif" width="100%" alt="AI Banner" />
+</p>
 
 ## 📌 About Me
 
@@ -54,21 +60,21 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VISHVADHARMAN&amp;theme=dracula" />
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=VISHVADHARMAN&amp;theme=dracula" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VISHVADHARMAN&amp;theme=dracula" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=VISHVADHARMAN&amp;theme=dracula" />
 </p>
 
 <p align="center">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=VISHVADHARMAN&amp;theme=dracula" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=VISHVADHARMAN&amp;theme=dracula" />
 </p>
 
 <p align="center">
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=VISHVADHARMAN&amp;theme=dracula" />
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=VISHVADHARMAN&amp;theme=dracula&amp;utcOffset=5.5" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=VISHVADHARMAN&amp;theme=dracula" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=VISHVADHARMAN&amp;theme=dracula&amp;utcOffset=5.5" />
 </p>
 
 <p align="center">
-  <img height="280em" src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=dracula&amp;radius=10" alt="VISHVADHARMAN Activity Graph" />
+  <img height="280em" src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=dracula&amp;radius=10" alt="Activity Graph" />
 </p>
 
 ## 🛠️ Languages and Tools
@@ -144,5 +150,7 @@
 </p>
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212744287-14f66c13-5458-40dc-9244-8ff533fc8f4a.gif" alt="Bottom Line" width="100%" />
+
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:0077FF,100:00FFFF&amp;height=120&amp;section=footer" />
+
 </div>
