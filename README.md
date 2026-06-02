@@ -185,15 +185,11 @@ Autonomous data analysis assistant for answering questions from datasets.
 <div align="center">
 
 <img width="48%" src="https://github-readme-stats.vercel.app/api?username=VISHVADHARMAN&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true" />
-<img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=VISHVADHARMAN&amp;theme=tokyonight&amp;hide_border=true" />
-
-<br/><br/>
-
 <img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VISHVADHARMAN&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" />
 
 <br/><br/>
 
-<img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=tokyo-night&amp;hide_border=true" />
+<img width="90%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=VISHVADHARMAN&amp;theme=tokyonight" />
 
 </div>
 
@@ -203,7 +199,7 @@ Autonomous data analysis assistant for answering questions from datasets.
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=VISHVADHARMAN&amp;theme=tokyonight&amp;no-frame=true&amp;row=1&amp;column=6" />
+<img src="https://github-profile-trophy.vercel.app/?username=VISHVADHARMAN&amp;theme=tokyonight&amp;no-frame=true&amp;no-bg=true&amp;margin-w=4" />
 
 </div>
 
@@ -213,11 +209,7 @@ Autonomous data analysis assistant for answering questions from datasets.
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph.svg" />
-  <img alt="Pacman contribution graph" src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph.svg" />
-</picture>
+<img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph.svg" alt="Pacman contribution graph" />
 
 </div>
 
