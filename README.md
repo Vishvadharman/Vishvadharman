@@ -5,7 +5,7 @@
 <h3 align="center">AI Engineer • Full Stack Developer • Open Source Contributor</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=900&lines=Building+AI-Powered+Systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast;Always+Learning+Something+New" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=900&lines=Building+AI-Powered+Systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast;Always+Learning+Something+New" alt="Typing SVG" width=50%/>
 </p>
 
 <br>
