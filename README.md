@@ -81,23 +81,12 @@
 ## 🌐 Connect With Me
 
 <p align="center">
-<a href="https://www.linkedin.com/in/vishvasami23"><img src="https://skillicons.dev/icons?i=linkedin" width="55"></a><a href="mailto:vishvadharmansaminathan@gmail.com"><img src="https://cdn.simpleicons.org/gmail/EA4335" width="55"></a><a href="https://github.com/VISHVADHARMAN"><img src="https://skillicons.dev/icons?i=github" width="55"></a>
+<a href="https://www.linkedin.com/in/vishvasami23"><img src="https://skillicons.dev/icons?i=linkedin" width="60"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="mailto:vishvadharmansaminathan@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" width="60"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/VISHVADHARMAN"><img src="https://skillicons.dev/icons?i=github" width="60"></a>
 </p>
-
-   
-
-<a href="mailto:vishvadharmansaminathan@gmail.com">
-<img src="https://cdn.simpleicons.org/gmail/EA4335" width="50"/>
-</a>
-
-   
-
-<a href="https://github.com/VISHVADHARMAN">
-<img src="https://skillicons.dev/icons?i=github" width="50"/>
-</a>
-</p>
-
----
 
 ## 🐍 Contribution Snake
 
