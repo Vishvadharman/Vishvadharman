@@ -5,17 +5,21 @@
 <h3 align="center">AI Engineer • Full Stack Developer • Open Source Contributor</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=900&lines=Building+AI-Powered+Systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast;Always+Learning+Something+New" alt="Typing SVG" width=45%/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=900&lines=Building+AI-Powered+Systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast;Always+Learning+Something+New" alt="Typing SVG" />
 </p>
 
 <br>
 
 <img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&label=Profile%20Views&color=00FFFF&style=for-the-badge" alt="Profile views" />
-
+<p align="center">
+  <img src="https://img.shields.io/badge/SanDisk%20Hackathon-Runner%20Up-gold?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/SIH-SemiFinalist-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GSSoC-2026-orange?style=for-the-badge" />
+</p>
 </div>
 
 <p align="center">
-  <img src="https://media.tenor.com/2uyENRmiUt0AAAAC/coding.gif" width="70%" alt="Coding Banner" />
+  <img src="https://media.tenor.com/2uyENRmiUt0AAAAC/coding.gif" width="70%" alt="Coding Banner" width=45%/>
 </p>
 
 ---
