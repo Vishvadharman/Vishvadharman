@@ -1,30 +1,30 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C9FF,100:92FE9D&height=220&section=header&text=Vishvadharman%20Saminathan&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI%20%26%20ML%20Engineer%20%7C%20Full%20Stack%20Developer%20%7C%20Open%20Source%20Contributor&descAlignY=58&descSize=16" />
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:00C9FF,100:92FE9D&amp;height=220&amp;section=header&amp;text=Vishvadharman%20Saminathan&amp;fontSize=42&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=AI%20%26%20ML%20Engineer%20%7C%20Full%20Stack%20Developer%20%7C%20Open%20Source%20Contributor&amp;descAlignY=58&amp;descSize=16" />
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00C9FF&center=true&vCenter=true&width=900&lines=Building+AI-powered+systems;Exploring+RAG+%26+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&amp;weight=600&amp;size=24&amp;pause=1000&amp;color=00C9FF&amp;center=true&amp;vCenter=true&amp;width=900&amp;lines=Building+AI-powered+systems;Exploring+RAG+%26+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast" />
 
 <br/>
 
 <a href="mailto:vishvadharmansaminathan@gmail.com">
-  <img src="https://img.shields.io/badge/Email-vishvadharmansaminathan%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  <img src="https://img.shields.io/badge/Email-vishvadharmansaminathan%40gmail.com-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" />
 </a>
 <a href="https://www.linkedin.com/in/vishvasami23/">
-  <img src="https://img.shields.io/badge/LinkedIn-Vishvadharman%20Saminathan-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  <img src="https://img.shields.io/badge/LinkedIn-Vishvadharman%20Saminathan-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" />
 </a>
 <a href="https://github.com/VISHVADHARMAN">
-  <img src="https://img.shields.io/badge/GitHub-VISHVADHARMAN-181717?style=for-the-badge&logo=github&logoColor=white" />
+  <img src="https://img.shields.io/badge/GitHub-VISHVADHARMAN-181717?style=for-the-badge&amp;logo=github&amp;logoColor=white" />
 </a>
 
 <br/><br/>
 
-<img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&label=Profile%20Views&color=00C9FF&style=for-the-badge" />
+<img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&amp;label=Profile%20Views&amp;color=00C9FF&amp;style=for-the-badge" />
 
 </div>
 
 ---
 
-## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28"> About Me
+## <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28" /> About Me
 
 <img align="right" width="370" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif" />
 
@@ -75,7 +75,7 @@
 
 ### Languages
 
-<img src="https://skillicons.dev/icons?i=python,cpp,js,html,css,sql" />
+<img src="https://skillicons.dev/icons?i=python,cpp,js,html,css" />
 
 ### Frameworks & Libraries
 
@@ -184,16 +184,16 @@ Autonomous data analysis assistant for answering questions from datasets.
 
 <div align="center">
 
-<img width="48%" src="https://github-readme-stats.vercel.app/api?username=VISHVADHARMAN&show_icons=true&theme=tokyonight&hide_border=true" />
-<img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=VISHVADHARMAN&theme=tokyonight&hide_border=true" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api?username=VISHVADHARMAN&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true" />
+<img width="48%" src="https://github-readme-streak-stats.herokuapp.com/?user=VISHVADHARMAN&amp;theme=tokyonight&amp;hide_border=true" />
 
 <br/><br/>
 
-<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VISHVADHARMAN&layout=compact&theme=tokyonight&hide_border=true" />
+<img width="48%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VISHVADHARMAN&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true" />
 
 <br/><br/>
 
-<img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&theme=tokyo-night&hide_border=true" />
+<img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&amp;theme=tokyo-night&amp;hide_border=true" />
 
 </div>
 
@@ -203,17 +203,21 @@ Autonomous data analysis assistant for answering questions from datasets.
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=VISHVADHARMAN&theme=tokyonight&no-frame=true&row=1&column=6" />
+<img src="https://github-profile-trophy.vercel.app/?username=VISHVADHARMAN&amp;theme=tokyonight&amp;no-frame=true&amp;row=1&amp;column=6" />
 
 </div>
 
 ---
 
-## 🧩 Contribution Snake
+## 🟡 Pacman Contribution Graph
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/snake.svg" alt="Snake animation" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph.svg" />
+  <img alt="Pacman contribution graph" src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/pacman-contribution-graph.svg" />
+</picture>
 
 </div>
 
@@ -224,13 +228,13 @@ Autonomous data analysis assistant for answering questions from datasets.
 <div align="center">
 
 <a href="mailto:vishvadharmansaminathan@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&amp;logo=gmail&amp;logoColor=white" />
 </a>
 <a href="https://www.linkedin.com/in/vishvasami23/">
-  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" />
 </a>
 <a href="https://www.youtube.com/@vishvadharmans8960">
-  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" />
+  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&amp;logo=youtube&amp;logoColor=white" />
 </a>
 
 </div>
@@ -241,6 +245,6 @@ Autonomous data analysis assistant for answering questions from datasets.
 
 ### 💡 "Building intelligent systems that solve real-world problems."
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:92FE9D,100:00C9FF&height=120&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&amp;color=0:92FE9D,100:00C9FF&amp;height=120&amp;section=footer" />
 
 </div>
