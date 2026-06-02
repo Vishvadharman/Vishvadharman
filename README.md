@@ -193,17 +193,6 @@ Autonomous data analysis assistant for answering questions from datasets.
 
 </div>
 
----
-
-## GitHub Trophies
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=VISHVADHARMAN&amp;theme=tokyonight&amp;no-frame=true&amp;no-bg=true&amp;margin-w=4" />
-
-</div>
-
----
 
 ## Pacman Contribution Graph
 
