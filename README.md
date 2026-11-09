@@ -1,107 +1,33 @@
-<div align="center">
+[![Vishvadharman Saminathan. AI, research and engineering.](assets/portfolio-cover.png)](https://vishvadharman-portfolio.vercel.app/)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00FFFF,100:0077FF&height=220&section=header&text=Vishvadharman%20Saminathan&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=AI%20Engineer%20|%20Open%20Source%20Contributor%20|%20Hackathon%20Finalist&descAlignY=58&descSize=16" />
+[Portfolio ↗](https://vishvadharman-portfolio.vercel.app/) · [LinkedIn ↗](https://www.linkedin.com/in/vishvasami23/) · [Email](mailto:vishvadharmansaminathan@gmail.com)
 
-<h3 align="center">AI Engineer • Full Stack Developer • Open Source Contributor</h3>
+I'm in my final year of B.Tech in AI and ML at **VIT Chennai**. As an AI intern at **Mavdero TechServices**, I work on document comparison and spend a lot of time on what happens after the model flags a change. Can a reviewer trace it back to the source?
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00FFFF&center=true&vCenter=true&width=900&lines=Building+AI-Powered+Systems;Exploring+RAG+and+Agentic+AI;Full+Stack+Developer;Open+Source+Contributor;Hackathon+Enthusiast;Always+Learning+Something+New" alt="Typing SVG" />
-</p>
+## Selected work
 
-<br>
+**[DeviationAI](https://deviation-ai-review.vercel.app/)** · Document AI\
+Compares legal drafts against a reference and links each finding to the source wording.
 
-<img src="https://komarev.com/ghpvc/?username=VISHVADHARMAN&label=Profile%20Views&color=00FFFF&style=for-the-badge" alt="Profile views" />
-<p align="center">
-  <img src="https://img.shields.io/badge/SanDisk%20Hackathon-Runner%20Up-gold?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/SIH-SemiFinalist-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/GSSoC-2026-orange?style=for-the-badge" />
-</p>
-</div>
+**[HippocampAI / BrainVault](https://github.com/Vishvadharman/Hippocamp-AI)** · SanDisk Hackathon runner-up\
+We extended the open-source memory engine with encrypted storage on a USB drive so an assistant could pick up its context on another machine.
 
-<p align="center">
-  <img src="https://media.tenor.com/2uyENRmiUt0AAAAC/coding.gif" width="70%" alt="Coding Banner" width=45%/>
-</p>
+**[KavachFusion](https://vishvadharman-portfolio.vercel.app/#work)** · Ongoing research\
+Connects CAN bus alerts with vehicle-network trust scores.
 
----
+**[Wall Crack Detection](https://github.com/Vishvadharman/Wall_Crack_Detection)** · Computer vision\
+A ResNet-18 image classifier built with PyTorch.
 
-## 📌 About Me
+## Research & inventions
 
-* 🎓 B.Tech CSE (Artificial Intelligence and Machine Learning) at **VIT Chennai**
-* 🤖 Passionate about AI Engineering, Generative AI, RAG Systems, and Intelligent Automation
-* 🌱 Currently exploring Agentic AI, Computer Vision, Drone Logistics, and Distributed AI
-* 💡 Building projects that solve real-world problems using AI
-* 🌍 Active Open Source Contributor
+**[Federated learning for V2X accident detection](https://doi.org/10.32604/cmes.2026.086802)** · First author · *Computer Modeling in Engineering & Sciences*, 2026
 
----
+We used SUMO traffic simulations to test how a shared accident detector responds when attackers introduce fake vehicle identities or poison updates sent to the federated model.
 
-## 🏆 Highlights
+Two other papers were accepted. One models cardiac electrophysiology with physics-informed networks (**IEEE TENCON 2026**), and the other uses audio to support emergency dispatch (**ICRTAC 2025**). I'm a co-inventor on two published Indian patent applications, **IN202641083839 A1** and **IN202641086137 A1**. [Research notes ↗](https://vishvadharman-portfolio.vercel.app/#research)
 
-* 🥈 Runner-Up — **SanDisk Hackathon**
-* 🚀 Smart India Hackathon Semi-Finalist
-* 🌍 GSSoC 2026 Contributor
-* ☁️ 80+ Google Cloud Skill Badges
-* 🛰️ ISRO Certified — Exploration of Solar System
+## Open source
 
----
+I joined **GirlScript Summer of Code** in 2026. I [tested CommitPulse's streak calculation](https://github.com/JhaSourav07/commitpulse/pull/1853) against a large spike in one day's commits and [added parser coverage for SecuScan's URL fuzzer](https://github.com/utksh1/SecuScan/pull/779).
 
-## 🚀 Featured Projects
-
-| Project                             | Description                                                     |
-| ----------------------------------- | --------------------------------------------------------------- |
-| **TDS Virtual TA**                  | AI-powered Retrieval Augmented Generation system for IIT Madras |
-| **SnapGraph AI**                    | AI-powered analytics platform for CSV and Excel datasets        |
-| **Project Drishti**                 | Agentic AI platform for crowd monitoring and emergency response |
-| **Trust-Aware Pneumonia Detection** | Explainable AI healthcare solution                              |
-| **Smart IoT Energy Monitoring**     | ESP32-based intelligent monitoring system                       |
-| **AI Data Analyst Agent**           | Autonomous assistant for dataset-driven insights                |
-
----
-
-## 🛠️ Tech Stack
-
-<p align="center">
-<img src="https://skillicons.dev/icons?i=python,cpp,js,react,firebase,tensorflow,opencv,fastapi,sqlite,git,github,linux,vscode&perline=7" />
-</p>
-
----
-
-## 📊 GitHub Analytics
-
-<p align="center">
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=VISHVADHARMAN&theme=dracula" />
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=VISHVADHARMAN&theme=dracula" />
-</p>
-
-<p align="center">
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=VISHVADHARMAN&theme=dracula" />
-</p>
-
-<p align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=VISHVADHARMAN&theme=dracula&radius=10" />
-</p>
-
----
-
-## 🌐 Connect With Me
-
-<p align="center">
-<a href="https://www.linkedin.com/in/vishvasami23"><img src="https://skillicons.dev/icons?i=linkedin" width="60"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="mailto:vishvadharmansaminathan@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" width="60"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://github.com/VISHVADHARMAN"><img src="https://skillicons.dev/icons?i=github" width="60"></a>
-</p>
-
-## 🐍 Contribution Snake
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/VISHVADHARMAN/VISHVADHARMAN/output/snake.svg" alt="Snake animation" />
-</p>
-
----
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0077FF,100:00FFFF&height=120&section=footer" />
-
-</div>
+**Tools I reach for** · Python, PyTorch, FastAPI, Next.js, Redis, Qdrant, Docker
