@@ -8,10 +8,10 @@
 </a>
 
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/binary-console-mobile-still.png">
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/binary-console-still.png">
-  <source media="(max-width: 767px)" srcset="assets/binary-console-mobile.gif">
-  <img width="100%" src="assets/binary-console.gif" alt="Vishva Field Console demo: a binary portrait of Vishvadharman Saminathan frames ASCII scenes for document comparison, V2X simulation, and BrainVault memory transfer.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/dash-console-mobile-still.png">
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/dash-console-still.png">
+  <source media="(max-width: 767px)" srcset="assets/dash-console-mobile.gif">
+  <img width="100%" src="assets/dash-console.gif" alt="Vishva Field Console demo: an ASCII portrait of Vishvadharman Saminathan drawn with hyphens frames ASCII scenes for document comparison, V2X simulation, and BrainVault memory transfer.">
 </picture>
 
 <p align="center"><a href="https://vishvadharman-portfolio.vercel.app/?build=1"><picture><source media="(max-width: 767px)" srcset="assets/profile-spectrum/portfolio-mobile.svg"><img width="31%" src="assets/profile-spectrum/portfolio.svg" alt="Portfolio"></picture></a> <a href="https://www.linkedin.com/in/vishvasami23/"><picture><source media="(max-width: 767px)" srcset="assets/profile-spectrum/linkedin-mobile.svg"><img width="31%" src="assets/profile-spectrum/linkedin.svg" alt="LinkedIn"></picture></a> <a href="mailto:vishvadharmansaminathan@gmail.com"><picture><source media="(max-width: 767px)" srcset="assets/profile-spectrum/email-mobile.svg"><img width="31%" src="assets/profile-spectrum/email.svg" alt="Email"></picture></a></p>
