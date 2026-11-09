@@ -1,8 +1,20 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 const root = new URL('../', import.meta.url);
-const directory = new URL('assets/profile-motion/', root);
+const cardFolder = 'assets/profile-spectrum/';
+const directory = new URL(cardFolder, root);
+const font = await readFile(new URL('./fonts/SpaceGrotesk.woff2', import.meta.url));
+const fontFace = '@font-face{font-family:Space Grotesk;src:url(data:font/woff2;base64,' +
+  font.toString('base64') + ') format("woff2");font-weight:300 700;font-display:swap}';
+
+const themes = {
+  intro: { accent:'#ffaf9d', highlight:'#ffd28b', surface:'#241927' },
+  work: { accent:'#83ddff', highlight:'#9aaeff', surface:'#14253c' },
+  research: { accent:'#d6b8ff', highlight:'#ffb4e4', surface:'#281b3b' },
+  'open-source': { accent:'#83edbb', highlight:'#8bdeed', surface:'#142c2b' },
+  activity: { accent:'#ffd689', highlight:'#91e6b9', surface:'#29261e' },
+};
 const site = 'https://vishvadharman-portfolio.vercel.app';
 const profile = 'https://github.com/Vishvadharman';
 const contributionPage = profile + '?tab=overview#js-contribution-activity';
@@ -22,22 +34,22 @@ const groups = [
       {
         id: 'deviation', title: 'DeviationAI', tag: 'MAVDERO TECHSERVICES  /  DOCUMENT AI',
         body: 'Compares legal drafts against a reference and links each finding to the source wording.',
-        link: 'https://deviation-ai-review.vercel.app/', action: 'OPEN DEMO', icon: 'document',
+        link: 'https://deviation-ai-review.vercel.app/', action: 'Open demo', icon: 'document',
       },
       {
         id: 'brainvault', title: 'HippocampAI / BrainVault', tag: 'SANDISK HACKATHON  /  RUNNER-UP',
         body: 'Our team extended HippocampAI with encrypted memory on a USB drive so an assistant could pick up its context on another machine.',
-        link: profile + '/Hippocamp-AI', action: 'VIEW CODE', icon: 'memory',
+        link: profile + '/Hippocamp-AI', action: 'View code', icon: 'memory',
       },
       {
         id: 'kavach', title: 'KavachFusion', tag: 'ONGOING RESEARCH  /  VEHICLE SECURITY',
         body: 'Connects CAN bus alerts with trust scores from the wider vehicle network.',
-        link: site + '/#work', action: 'PROJECT NOTES', icon: 'shield',
+        link: site + '/#work', action: 'Project notes', icon: 'shield',
       },
       {
         id: 'wall-crack', title: 'Wall Crack Detection', tag: 'PYTORCH  /  COMPUTER VISION',
         body: 'Fine-tunes a ResNet-18 classifier on images of walls.',
-        link: profile + '/Wall_Crack_Detection', action: 'VIEW CODE', icon: 'vision',
+        link: profile + '/Wall_Crack_Detection', action: 'View code', icon: 'vision',
       },
     ],
   },
@@ -47,17 +59,17 @@ const groups = [
       {
         id: 'v2x', title: 'Federated learning for V2X', tag: 'FIRST AUTHOR  /  CMES 2026',
         body: 'We used SUMO traffic simulations to test how a shared accident detector responds to fake vehicle identities and poisoned model updates.',
-        link: 'https://doi.org/10.32604/cmes.2026.086802', action: 'READ PAPER', icon: 'signal',
+        link: 'https://doi.org/10.32604/cmes.2026.086802', action: 'Read paper', icon: 'signal',
       },
       {
         id: 'accepted-papers', title: 'Cardiac models & emergency audio', tag: 'IEEE TENCON 2026  /  ICRTAC 2025',
         body: 'Two accepted papers on physics-informed models for cardiac electrophysiology and audio-based emergency dispatch.',
-        link: site + '/#research', action: 'RESEARCH NOTES', icon: 'signal',
+        link: site + '/#research', action: 'Research notes', icon: 'signal',
       },
       {
         id: 'patent-applications', title: 'Two published patent applications', tag: 'INDIAN PATENT OFFICE  /  CO-INVENTOR',
         body: 'IN202641083839 A1 covers adversarial attacks in federated learning. IN202641086137 A1 covers elevator bio-safety.',
-        link: site + '/#research', action: 'INVENTION NOTES', icon: 'document',
+        link: site + '/#research', action: 'Invention notes', icon: 'document',
       },
     ],
   },
@@ -67,12 +79,12 @@ const groups = [
       {
         id: 'commitpulse', title: 'CommitPulse', tag: 'MERGED PULL REQUEST  /  #1853',
         body: 'I tested the streak calculation against a large spike in one day’s commits.',
-        link: 'https://github.com/JhaSourav07/commitpulse/pull/1853', action: 'VIEW PATCH', icon: 'signal',
+        link: 'https://github.com/JhaSourav07/commitpulse/pull/1853', action: 'View patch', icon: 'signal',
       },
       {
         id: 'secuscan', title: 'SecuScan', tag: 'MERGED PULL REQUEST  /  #779',
         body: 'I added parser and contract tests for the URL fuzzer.',
-        link: 'https://github.com/utksh1/SecuScan/pull/779', action: 'VIEW PATCH', icon: 'shield',
+        link: 'https://github.com/utksh1/SecuScan/pull/779', action: 'View patch', icon: 'shield',
       },
       {
         id: 'toolkit', title: 'Working toolkit', tag: 'TOOLS I REACH FOR',
@@ -86,7 +98,7 @@ const groups = [
 const intro = {
   id: 'intro', title: 'About me', tag: 'VIT CHENNAI  /  MAVDERO TECHSERVICES',
   body: 'I’m in my final year of B.Tech in AI and ML at VIT Chennai. As an AI intern at Mavdero TechServices, I work on document comparison and care about whether a reviewer can trace a flagged change back to the source.',
-  link: site + '/#about', action: 'ABOUT ME', icon: 'vision',
+  link: site + '/#about', action: 'About me', icon: 'vision',
 };
 
 const glyphs = {
@@ -124,7 +136,8 @@ function wrap(text, size, maxWidth, bold = false) {
   return lines;
 }
 
-function scene(width, height, description, period, accent = '#8bc8df', phase = .16, kind = 'row') {
+function scene(width, height, description, period, theme, phase = .16, kind = 'row') {
+  const { accent, highlight, surface } = theme;
   const content = [];
   const textLayers = [];
   const t = seconds => (seconds / period).toFixed(6);
@@ -138,11 +151,12 @@ function scene(width, height, description, period, accent = '#8bc8df', phase = .
     return [start, start, end, end];
   };
   const scanTimes = [0, phase, phase + period * .54, period];
-  function line(text, x, y, size, { bold = false, color = '#c9d5df', mono = false, shine = bold ? .83 : .63, align = 'start' } = {}) {
-    const family = mono ? 'Consolas, ui-monospace, monospace' : 'system-ui, Segoe UI, sans-serif';
-    const label = '<text x="' + x + '" y="' + y + '" text-anchor="' + align + '" font-family="' + family +
-      '" font-size="' + size + '" font-weight="' + (bold ? '700' : '450') + '"' +
-      (bold && !mono ? ' letter-spacing="-.025em"' : '');
+  function line(text, x, y, size, {
+    weight = 400, color = '#d6d8e6', spacing = 0, shine = weight >= 600 ? .75 : .52, align = 'start',
+  } = {}) {
+    const label = '<text x="' + x + '" y="' + y + '" text-anchor="' + align +
+      '" font-family="Space Grotesk, Segoe UI, sans-serif" font-size="' + size +
+      '" font-weight="' + weight + '" letter-spacing="' + spacing + 'em"';
     const words = '>' + escape(text) + '</text>';
     textLayers.push(label + ' fill="' + color + '"' + words);
     if (shine) textLayers.push(label + ' class="animated" fill="url(#word-light)" opacity="' + shine + '"' + words);
@@ -155,18 +169,21 @@ function scene(width, height, description, period, accent = '#8bc8df', phase = .
     return [
       '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '" viewBox="0 0 ' + width + ' ' + height + '" role="img" aria-labelledby="title">',
       '<title id="title">' + escape(description) + '</title>',
-      '<style>@media(prefers-reduced-motion:reduce){.animated{display:none}}</style>',
+      '<style>' + fontFace + '@media(prefers-reduced-motion:reduce){.animated{display:none}}</style>',
       '<defs>',
-      '<linearGradient id="surface" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#101820"/><stop offset="1" stop-color="#121a22"/></linearGradient>',
+      '<linearGradient id="surface" x1="0%" y1="100%" x2="100%" y2="0%"><stop stop-color="#10131f"/><stop offset="1" stop-color="' + surface + '"/></linearGradient>',
+      '<linearGradient id="edge"><stop stop-color="' + accent + '"/><stop offset="1" stop-color="' + highlight + '" stop-opacity=".42"/></linearGradient>',
       '<linearGradient id="word-light" gradientUnits="userSpaceOnUse" x1="' + (-band) + '" x2="0" y1="0" y2="0">' +
         '<stop stop-color="' + accent + '" stop-opacity="0"/><stop offset=".42" stop-color="' + accent + '" stop-opacity=".78"/>' +
-        '<stop offset=".62" stop-color="#f1fcff" stop-opacity=".92"/><stop offset="1" stop-color="' + accent + '" stop-opacity="0"/>' +
+        '<stop offset=".62" stop-color="' + highlight + '" stop-opacity=".96"/><stop offset="1" stop-color="' + highlight + '" stop-opacity="0"/>' +
         track('x1', scan(), scanTimes) + track('x2', scan(band), scanTimes) + '</linearGradient>',
       '</defs>',
-      divider ? '' : '<rect x=".5" y=".5" width="' + (width - 1) + '" height="' + (height - 1) + '" rx="' + (prominent ? 13 : 8) +
-        '" fill="' + (prominent ? 'url(#surface)' : '#0e151c') + '" stroke="' + accent + '" stroke-opacity="' + (prominent ? '.31' : '.17') + '"/>',
+      divider ? '' : '<rect x=".5" y=".5" width="' + (width - 1) + '" height="' + (height - 1) + '" rx="' + (prominent ? 14 : 9) +
+        '" fill="' + (prominent || kind === 'link' ? 'url(#surface)' : '#111521') +
+        '" stroke="url(#edge)" stroke-opacity="' + (prominent ? '.48' : '.27') + '"/>',
+      prominent ? '<path d="M' + inset + ' 2h' + Math.round(width * .19) + '" stroke="url(#edge)" stroke-width="3" stroke-linecap="round"/>' : '',
       kind === 'link' ? '' : '<path d="M' + inset + ' ' + railY + 'H' + (width - inset) + '" stroke="' + accent + '" stroke-opacity="' +
-        (divider ? '.35' : '.11') + '"/><path class="animated" d="M' + inset + ' ' + railY + 'H' + (width - inset) +
+        (divider ? '.56' : '.13') + '"/><path class="animated" d="M' + inset + ' ' + railY + 'H' + (width - inset) +
         '" stroke="url(#word-light)" stroke-width="' + (divider ? 2 : 1) + '"/>',
       ...content,
       ...textLayers,
@@ -176,16 +193,17 @@ function scene(width, height, description, period, accent = '#8bc8df', phase = .
   return { line, finish, content, track };
 }
 
-function projectCard(item, width, index, accent) {
+function projectCard(item, width, index, theme) {
+  const { accent, highlight } = theme;
   const narrow = width === 420;
-  const featured = item.id === 'deviation' || item.id === 'v2x';
+  const featured = ['intro', 'deviation', 'v2x'].includes(item.id);
   const x = narrow ? 20 : 28;
-  const titleSize = featured ? (narrow ? 32 : 43) : (narrow ? 28 : 32);
+  const titleSize = featured ? (narrow ? 33 : 45) : (narrow ? 29 : 34);
   const bodySize = narrow ? 20 : 22;
-  const badge = narrow ? 12 : 14;
-  const tagLines = wrap(item.tag, badge, width - 2 * x - 48, true);
+  const badge = narrow ? 13 : 15;
+  const tagLines = wrap(item.tag, badge + 1, width - 2 * x - 48, true);
   const titleLines = wrap(item.title, titleSize, width - 2 * x - (featured && !narrow ? 171 : 48), true);
-  const bodyLines = wrap(item.body, bodySize, width - 2 * x - (narrow ? 0 : featured ? 190 : item.action ? 164 : 60));
+  const bodyLines = wrap(item.body, bodySize, width - 2 * x - (narrow ? 0 : featured ? 190 : item.action ? 174 : 60));
   const titleY = (featured ? 68 : 60) + (tagLines.length - 1) * 17;
   const bodyY = titleY + (titleLines.length - 1) * (titleSize + 3) + (featured ? 34 : 30);
   const lineHeight = narrow ? 26 : 29;
@@ -194,7 +212,7 @@ function projectCard(item, width, index, accent) {
   const height = bottom + (actionBelow ? 55 : 23);
   const period = 8.3 + (index % 4) * .76;
   const phase = .22 + (index % 5) * .48;
-  const picture = scene(width, height, [item.title, item.tag, item.body, item.action].filter(Boolean).join('. '), period, accent, phase, featured ? 'lead' : 'row');
+  const picture = scene(width, height, [item.title, item.tag, item.body, item.action].filter(Boolean).join('. '), period, theme, phase, featured ? 'lead' : 'row');
   if (item.icon) {
     const large = featured && !narrow;
     const scale = large ? 1.14 : narrow ? .46 : .59;
@@ -204,53 +222,53 @@ function projectCard(item, width, index, accent) {
       const cx = left + 32;
       const cy = top + 32;
       picture.content.push('<g fill="none" stroke="' + accent + '" stroke-width="1">' +
-        '<circle cx="' + cx + '" cy="' + cy + '" r="53" opacity=".16"/>' +
-        '<circle cx="' + cx + '" cy="' + cy + '" r="65" opacity=".12" stroke-dasharray="2 5"/>' +
+        '<circle cx="' + cx + '" cy="' + cy + '" r="53" opacity=".24"/>' +
+        '<circle cx="' + cx + '" cy="' + cy + '" r="65" opacity=".25" stroke-dasharray="2 5"/>' +
         '<path d="M' + (cx - 74) + ' ' + cy + 'h16m116 0h16m-74 -74v16m0 116v16" opacity=".25"/>' +
-        '<circle class="animated" cx="' + (cx + 53) + '" cy="' + cy + '" r="3.2" fill="' + accent + '" stroke="none">' +
+        '<circle class="animated" cx="' + (cx + 53) + '" cy="' + cy + '" r="3.8" fill="' + highlight + '" stroke="none">' +
         '<animateTransform attributeName="transform" type="rotate" from="0 ' + cx + ' ' + cy + '" to="360 ' + cx + ' ' + cy +
         '" dur="' + (period * 1.7).toFixed(2) + 's" repeatCount="indefinite"/></circle></g>');
     }
     picture.content.push(
       '<g transform="translate(' + left + ' ' + top + ') scale(' + scale + ')" fill="none" stroke="' + accent +
       '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path opacity="' +
-      (large ? '.86' : '.65') + '" d="' + glyphs[item.icon] + '"/></g>'
+      (large ? '.95' : '.78') + '" d="' + glyphs[item.icon] + '"/></g>'
     );
   }
-  tagLines.forEach((text, i) => picture.line(text, x, 29 + i * 17, badge, { color:accent, mono:true, bold:true, shine:.56 }));
-  titleLines.forEach((text, i) => picture.line(text, x, titleY + i * (titleSize + 3), titleSize, { color:'#f2f6f9', bold:true }));
+  tagLines.forEach((text, i) => picture.line(text, x, 29 + i * 17, badge, { color:accent, weight:600, spacing:.06 }));
+  titleLines.forEach((text, i) => picture.line(text, x, titleY + i * (titleSize + 3), titleSize, {
+    color:'#faf7ff', weight:700, spacing:-.036,
+  }));
   bodyLines.forEach((text, i) => picture.line(text, x, bodyY + i * lineHeight, bodySize));
   if (item.action) {
     const label = item.action + (item.link.startsWith('mailto:') ? '' : ' ↗');
-    const buttonWidth = Math.ceil(label.length * badge * .62 + 24);
+    const buttonWidth = Math.ceil(label.length * badge * .55 + 30);
     const left = actionBelow ? x : width - x - buttonWidth;
     const top = actionBelow ? bottom + 13 : bottom - 21;
     picture.content.push('<rect x="' + left + '" y="' + top + '" width="' + buttonWidth +
-      '" height="28" rx="5" fill="' + accent + '" fill-opacity=".07" stroke="' + accent + '" stroke-opacity=".25"/>');
-    picture.line(label, left + buttonWidth / 2, top + 19, badge, { color:accent, mono:true, bold:true, align:'middle' });
+      '" height="28" rx="7" fill="' + accent + '" fill-opacity=".12" stroke="' + accent + '" stroke-opacity=".42"/>');
+    picture.line(label, left + buttonWidth / 2, top + 19, badge, { color:accent, weight:600, align:'middle' });
   }
   return picture.finish();
 }
 
-function sectionCard(section, width, accent) {
+function sectionCard(section, width, theme) {
   const narrow = width === 420;
   const x = narrow ? 20 : 28;
-  const size = narrow ? 34 : 46;
-  const height = narrow ? 116 : 123;
-  const picture = scene(width, height, section.title + '. ' + section.signal, 9.8, accent, .35 + .43 * Number(section.index), 'divider');
-  if (!narrow) {
-    picture.content.push('<path d="M' + (width - 156) + ' 33h128m-128 54h128m-128 -54v54m128 -54v54" fill="none" stroke="' + accent + '" opacity=".24"/>');
-    picture.line(section.index, width - 92, 76, 37, { color:accent, mono:true, bold:true, align:'middle' });
-  }
-  picture.line('SECTION ' + section.index, x, 29, 13, { color:accent, mono:true, bold:true });
-  picture.line(section.title, x, narrow ? 69 : 75, size, { color:'#f1f5f8', bold:true });
-  picture.line(section.signal, x, narrow ? 94 : 100, narrow ? 11 : 14, { color:'#a8b9c6', mono:true, bold:true });
+  const size = narrow ? 37 : 53;
+  const height = narrow ? 120 : 135;
+  const { accent, highlight } = theme;
+  const picture = scene(width, height, section.title + '. ' + section.signal, 9.8, theme, .35 + .43 * Number(section.index), 'divider');
+  picture.content.push('<rect x="' + x + '" y="11" width="88" height="22" rx="5" fill="' + accent + '" fill-opacity=".15"/>');
+  picture.line('SECTION ' + section.index, x + 9, 26, 11, { color:accent, weight:700, spacing:.085 });
+  picture.line(section.title, x, narrow ? 75 : 84, size, { color:highlight, weight:700, spacing:-.049 });
+  picture.line(section.signal, x, narrow ? 101 : 112, narrow ? 11 : 13, { color:'#bec6db', weight:600, spacing:.07 });
   return picture.finish();
 }
 
-function contactCard(contact, width) {
-  const picture = scene(width, 45, contact.title, 9.6, '#8bc8df', .4 + contacts.indexOf(contact) * .53, 'link');
-  picture.line(contact.title.toUpperCase() + '  ↗', width / 2, 29, 21, { color:'#dceaf2', mono:true, bold:true, align:'middle' });
+function contactCard(contact, width, theme) {
+  const picture = scene(width, 47, contact.title, 9.6, theme, .4 + contacts.indexOf(contact) * .53, 'link');
+  picture.line(contact.title + '  ↗', width / 2, 31, 22, { color:theme.accent, weight:600, align:'middle' });
   return picture.finish();
 }
 
@@ -276,10 +294,10 @@ function activityCard(data, width) {
   const total = data.total.toLocaleString('en-US');
   const date = new Intl.DateTimeFormat('en-US', { year:'numeric', month:'short', day:'numeric', timeZone:'UTC' }).format(new Date(data.date + 'T00:00:00Z')).toUpperCase();
   const title = total + ' public contributions';
-  const accent = '#8bdec6';
-  const picture = scene(width, height, title + ' in the last year. Snapshot ' + date + '.', 9.4, accent, .92, 'activity');
-  picture.line('04  /  GITHUB ACTIVITY', x, 29, narrow ? 12 : 14, { color:accent, mono:true, bold:true });
-  picture.line(title, x, 72, narrow ? 30 : 40, { color:'#f2f6f9', bold:true });
+  const theme = themes.activity;
+  const picture = scene(width, height, title + ' in the last year. Snapshot ' + date + '.', 9.4, theme, .92, 'activity');
+  picture.line('04  /  GITHUB ACTIVITY', x, 29, narrow ? 12 : 14, { color:theme.accent, weight:600, spacing:.07 });
+  picture.line(title, x, 72, narrow ? 32 : 45, { color:'#faf7ff', weight:700, spacing:-.039 });
   const base = height - 48;
   const slot = (width - 2 * x) / data.weeks.length;
   const maximum = Math.max(1, ...data.weeks);
@@ -288,15 +306,15 @@ function activityCard(data, width) {
     const left = (x + i * slot).toFixed(2);
     const barWidth = Math.max(2, slot - (narrow ? 1.4 : 3)).toFixed(2);
     const rect = '<rect x="' + left + '" y="' + (base - bar) + '" width="' + barWidth + '" height="' + bar + '" rx="1.4" fill="';
-    picture.content.push(rect + (count ? '#579e8c' : '#294b45') + '"/>');
+    picture.content.push(rect + (count ? theme.highlight : '#3a464a') + '"/>');
     if (count) picture.content.push(rect + 'url(#word-light)" class="animated"/>');
   });
-  picture.line('WEEKLY ACTIVITY  /  SNAPSHOT ' + date, x, height - 19, narrow ? 11 : 14, { color:'#adccc5', mono:true, bold:true });
+  picture.line('WEEKLY ACTIVITY  /  SNAPSHOT ' + date, x, height - 19, narrow ? 11 : 14, { color:'#b8c9cb', weight:600, spacing:.06 });
   return picture.finish();
 }
 
-const path = id => 'assets/profile-motion/' + id + '.svg';
-const mobilePath = id => 'assets/profile-motion/' + id + '-mobile.svg';
+const path = id => cardFolder + id + '.svg';
+const mobilePath = id => path(id + '-mobile');
 function embed(id, alt, link) {
   const tag = '<picture><source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="' + path(id + '-mobile-still') +
     '"><source media="(prefers-reduced-motion: reduce)" srcset="' + path(id + '-still') +
@@ -307,25 +325,28 @@ function embed(id, alt, link) {
 const fullAlt = item => item.title + '. ' + item.tag + '. ' + item.body + (item.action ? ' ' + item.action + '.' : '');
 const grid = await readContributionGrid();
 await mkdir(directory, { recursive:true });
-const accents = ['#8bc8df', '#b5adf4', '#8bdec6'];
 for (const width of [960, 420]) {
   let order = 0;
   const suffix = width === 420 ? '-mobile' : '';
   const save = async (id, svg) => {
     await writeFile(new URL(id + suffix + '.svg', directory), svg);
-    const still = svg.replace(/<animate(?:Transform)?\b[^>]*\/>/g, '').replace(/<style>.*?<\/style>/, '<style>.animated{display:none}</style>');
+    const still = svg.replace(/<animate(?:Transform)?\b[^>]*\/>/g, '')
+      .replace('@media(prefers-reduced-motion:reduce){.animated{display:none}}', '.animated{display:none}');
     await writeFile(new URL(id + suffix + '-still.svg', directory), still);
   };
-  await save(intro.id, projectCard(intro, width, order++, accents[0]));
-  for (const [index, group] of groups.entries()) {
-    await save(group.id, sectionCard(group, width, accents[index]));
-    for (const item of group.entries) await save(item.id, projectCard(item, width, order++, accents[index]));
+  await save(intro.id, projectCard(intro, width, order++, themes.intro));
+  for (const group of groups) {
+    const theme = themes[group.id];
+    await save(group.id, sectionCard(group, width, theme));
+    for (const item of group.entries) await save(item.id, projectCard(item, width, order++, theme));
   }
   await save('activity', activityCard(grid, width));
 }
-for (const contact of contacts) {
-  await writeFile(new URL(contact.id + '.svg', directory), contactCard(contact, 300));
-  await writeFile(new URL(contact.id + '-mobile.svg', directory), contactCard(contact, 155));
+const contactThemes = [themes.work, themes.research, themes.intro];
+for (const [index, contact] of contacts.entries()) {
+  const theme = contactThemes[index];
+  await writeFile(new URL(contact.id + '.svg', directory), contactCard(contact, 300, theme));
+  await writeFile(new URL(contact.id + '-mobile.svg', directory), contactCard(contact, 155, theme));
 }
 
 const cover = [
@@ -338,10 +359,10 @@ const cover = [
 ].join('\n');
 const terminal = [
   '<picture>',
-  '  <source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/field-console-mobile-still.png">',
-  '  <source media="(prefers-reduced-motion: reduce)" srcset="assets/field-console-still.png">',
-  '  <source media="(max-width: 767px)" srcset="assets/field-console-mobile.gif">',
-  '  <img width="100%" src="assets/field-console.gif" alt="Vishva Field Console demo: terminal commands run an ASCII document comparison for DeviationAI, a V2X simulation, and an encrypted BrainVault memory transfer.">',
+  '  <source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/spectrum-console-mobile-still.png">',
+  '  <source media="(prefers-reduced-motion: reduce)" srcset="assets/spectrum-console-still.png">',
+  '  <source media="(max-width: 767px)" srcset="assets/spectrum-console-mobile.gif">',
+  '  <img width="100%" src="assets/spectrum-console.gif" alt="Vishva Field Console demo: terminal commands run an ASCII document comparison for DeviationAI, a V2X simulation, and an encrypted BrainVault memory transfer.">',
   '</picture>',
 ].join('\n');
 const buttons = contacts.map(contact => '<a href="' + contact.link + '"><picture><source media="(max-width: 767px)" srcset="' + mobilePath(contact.id) +

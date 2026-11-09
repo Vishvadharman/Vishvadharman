@@ -2,28 +2,29 @@
 
 Run: python scripts/build-terminal.py
 """
-import math
 import os
 from functools import lru_cache
 from pathlib import Path
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageColor, ImageDraw, ImageFont
 
 OUTPUT = Path(__file__).resolve().parents[1] / "assets"
-BG = "#0a0f16"
-EDGE = "#2b3b48"
-PANEL = "#0d1620"
-GRID = "#213342"
-MUTED = "#8da4b5"
-WHITE = "#dceaf3"
-CYAN = "#86dcf6"
-MINT = "#91efc8"
-VIOLET = "#c0afff"
-AMBER = "#ffd291"
+DISPLAY_FONT = Path(__file__).with_name("fonts") / "SpaceGrotesk.ttf"
+BG = "#10131f"
+EDGE = "#34384f"
+PANEL = "#151a2b"
+GRID = "#283044"
+MUTED = "#a9b4ce"
+WHITE = "#f6f1ff"
+CYAN = "#83ddff"
+MINT = "#83edbb"
+VIOLET = "#d6b8ff"
+AMBER = "#ffd689"
+CORAL = "#ffaf9d"
 CHARS = "01.:+=#@"
 FRAME_MS = 60
 SCENES = (
-    (3000, "./field-console", "SYSTEM BOOT", CYAN, (
+    (3000, "./field-console", "SYSTEM BOOT", CORAL, (
         ("boot", "initialize demo shell"), ("load", "document AI / vehicle AI"),
         ("load", "portable agent memory"), ("ok", "console online"),
     )),
@@ -39,7 +40,7 @@ SCENES = (
         ("open", "encrypted USB memory"), ("read", "load saved context"),
         ("move", "resume on another machine"), ("ok", "agent context restored"),
     )),
-    (4700, "whoami", "ENGINEER PROFILE", CYAN, (
+    (4700, "whoami", "ENGINEER PROFILE", AMBER, (
         ("name", "Vishvadharman Saminathan"), ("work", "AI engineering / research"),
         ("base", "Chennai, India"), ("exit", "session complete"),
     )),
@@ -48,20 +49,33 @@ TOTAL = sum(s[0] for s in SCENES)
 
 
 @lru_cache
-def font(size, bold=False):
+def font(size, bold=False, mono=True):
+    if not mono:
+        face = ImageFont.truetype(str(DISPLAY_FONT), size)
+        face.set_variation_by_axes([700 if bold else 450])
+        return face
     windows = Path(os.environ.get("WINDIR", "C:/Windows")) / "Fonts"
-    candidates = [windows / ("consolab.ttf" if bold else "consola.ttf"),
+    candidates = [windows / "CascadiaMono.ttf", windows / ("consolab.ttf" if bold else "consola.ttf"),
                   "DejaVuSansMono-Bold.ttf" if bold else "DejaVuSansMono.ttf"]
     for candidate in candidates:
         try:
-            return ImageFont.truetype(str(candidate), size)
+            face = ImageFont.truetype(str(candidate), size)
+            if candidate == windows / "CascadiaMono.ttf":
+                face.set_variation_by_axes([650 if bold else 450])
+            return face
         except OSError:
             continue
     raise RuntimeError("Install Consolas or DejaVu Sans Mono.")
 
 
-def line(draw, pos, label, size, color, bold=False, anchor="lt"):
-    draw.text(pos, label, font=font(size, bold), fill=color, anchor=anchor)
+def line(draw, pos, label, size, color, bold=False, anchor="lt", mono=True):
+    draw.text(pos, label, font=font(size, bold, mono), fill=color, anchor=anchor)
+
+
+@lru_cache
+def tint(base, accent, strength):
+    return tuple(round(a + (b - a) * strength)
+                 for a, b in zip(ImageColor.getrgb(base), ImageColor.getrgb(accent)))
 
 
 def diagram(draw, panel, scene, t, accent):
@@ -96,7 +110,7 @@ def diagram(draw, panel, scene, t, accent):
                 if near and 0 < y < 11:
                     wave = abs(x - sweep + y*.28)
                     value = CHARS[(x*7 + y*11 + (int(t*9) if wave < 3 else 0)) % len(CHARS)]
-                    put(x, y, value, WHITE if wave < 1.25 else accent if wave < 4 else "#3f7488")
+                    put(x, y, value, WHITE if wave < 1.25 else accent if wave < 4 else tint(BG, accent, .53))
                 elif (y*5 + x*7) % 29 == 4:
                     put(x, y, ".", GRID)
         put(0, 0, "[-", MUTED)
@@ -177,14 +191,16 @@ def render(ms, mobile=False):
             break
         ms -= duration
     t = ms / 1000
-    draw.rounded_rectangle((1, 1, width-2, height-2), 13, outline=EDGE, width=2)
-    draw.line((1, 58, width-2, 58), fill=EDGE)
-    draw.rectangle((21, 23, 28, 31), fill=accent)
-    line(draw, (40, 20), "VISHVA / FIELD CONSOLE", 20, WHITE, True)
-    line(draw, (width-21, 22), "DEMO MODE", 15, MUTED, anchor="rt")
+    border = tint(EDGE, accent, .27)
+    draw.rounded_rectangle((1, 1, width-2, height-2), 13, fill=tint(BG, accent, .025), outline=border, width=2)
+    draw.line((2, 58, width-3, 58), fill=border)
+    draw.rounded_rectangle((22, 16, 94, 43), 6, fill=tint(BG, accent, .18))
+    line(draw, (58, 30), "VISHVA", 15, accent, True, anchor="mm", mono=False)
+    line(draw, (109, 17), "Field Console", 27, WHITE, True, mono=False)
+    line(draw, (width-23, 24), "Demo mode", 17, MUTED, anchor="rt", mono=False)
     x = 24 if mobile else 27
     text_size = 24 if mobile else 25
-    line(draw, (x, 79), f"SESSION {index+1:02} / {len(SCENES):02}", 16, accent, True)
+    line(draw, (x, 79), f"Session {index+1:02} / {len(SCENES):02}", 18, accent, True, mono=False)
     prompt = "vishva> "
     py = 115
     char_width = font(text_size, True).getlength("X")
@@ -197,8 +213,10 @@ def render(ms, mobile=False):
         start = .88 + .37*i
         if t < start:
             break
-        line(draw, (x, log_y+i*33), f"[{kind:<5}]", 19, accent, True)
-        line(draw, (x+103, log_y+i*33), message, 22, WHITE)
+        row_y = log_y + i * 33
+        draw.rounded_rectangle((x, row_y-3, x+76, row_y+21), 5, fill=tint(BG, accent, .14))
+        line(draw, (x+38, row_y+9), kind.upper(), 14, accent, True, anchor="mm", mono=False)
+        line(draw, (x+92, row_y), message, 23, WHITE, mono=False)
     if typed < len(command):
         caret_x = prompt_x + typed*char_width
         caret_y = py
@@ -210,15 +228,15 @@ def render(ms, mobile=False):
     if caret_x is not None and (typed < len(command) or int(t*3) % 2 == 0):
         draw.rectangle((caret_x, caret_y, caret_x+char_width-2, caret_y+19), fill=accent)
     panel = (22, 327, width-23, 586) if mobile else (567, 76, width-23, 376)
-    draw.rounded_rectangle(panel, 9, fill=PANEL, outline=EDGE)
-    a,b,c,d = panel
-    draw.line((a+1, b+34, c-1, b+34), fill=EDGE)
-    line(draw, (a+12, b+10), label, 16, accent, True)
-    line(draw, (c-12, b+11), "ASCII", 14, MUTED, anchor="rt")
+    draw.rounded_rectangle(panel, 9, fill=tint(PANEL, accent, .06), outline=border)
+    a, b, c, _ = panel
+    draw.line((a+1, b+34, c-1, b+34), fill=border)
+    line(draw, (a+12, b+9), label, 17, accent, True, mono=False)
+    line(draw, (c-12, b+10), "ASCII", 15, MUTED, anchor="rt", mono=False)
     diagram(draw, panel, index, t, accent)
     base_y = height - 47
-    draw.line((1, base_y, width-2, base_y), fill=EDGE)
-    line(draw, (x, base_y+15), "LOOP PLAYBACK", 15, MUTED, True)
+    draw.line((2, base_y, width-3, base_y), fill=border)
+    line(draw, (x, base_y+15), "Loop playback", 16, MUTED, True, mono=False)
     right = width-24
     step = 27 if mobile else 44
     for j, (_, _, _, color, _) in enumerate(SCENES):
@@ -240,11 +258,11 @@ def export(mobile):
     palette = palette_board.quantize(colors=128)
     frames = [render(ms, mobile).quantize(palette=palette, dither=Image.Dither.NONE)
               for ms in range(0, TOTAL, FRAME_MS)]
-    gif = OUTPUT / f"field-console{suffix}.gif"
+    gif = OUTPUT / f"spectrum-console{suffix}.gif"
     frames[0].save(gif, save_all=True, append_images=frames[1:], duration=FRAME_MS,
                    loop=0, disposal=1, optimize=True)
     still = render(sum(s[0] for s in SCENES[:-1])+2640, mobile)
-    still.save(OUTPUT / f"field-console{suffix}-still.png", optimize=True)
+    still.save(OUTPUT / f"spectrum-console{suffix}-still.png", optimize=True)
     print(f"{gif.name}: {gif.stat().st_size:,} bytes, {len(frames)} source frames")
 
 
