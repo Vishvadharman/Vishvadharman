@@ -1,4 +1,11 @@
-[![Vishvadharman Saminathan. AI, research and engineering.](assets/portfolio-cover.png)](https://vishvadharman-portfolio.vercel.app/)
+<a href="https://vishvadharman-portfolio.vercel.app/?build=1">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/portfolio-cover.png">
+    <img src="assets/portfolio-build.gif" alt="Four agents build Vishvadharman Saminathan's profile cover. AI, research and engineering.">
+  </picture>
+</a>
+
+[![Now building document AI, researching trustworthy AI, and contributing to open source](assets/build-signal.svg)](https://vishvadharman-portfolio.vercel.app/?build=1)
 
 [Portfolio ↗](https://vishvadharman-portfolio.vercel.app/) · [LinkedIn ↗](https://www.linkedin.com/in/vishvasami23/) · [Email](mailto:vishvadharmansaminathan@gmail.com)
 
@@ -18,6 +25,8 @@ Connects CAN bus alerts with vehicle-network trust scores.
 **[Wall Crack Detection](https://github.com/Vishvadharman/Wall_Crack_Detection)** · Computer vision\
 A ResNet-18 image classifier built with PyTorch.
 
+![](assets/section-signal.svg)
+
 ## Research & inventions
 
 **[Federated learning for V2X accident detection](https://doi.org/10.32604/cmes.2026.086802)** · First author · *Computer Modeling in Engineering & Sciences*, 2026
@@ -31,3 +40,13 @@ Two other papers were accepted. One models cardiac electrophysiology with physic
 I joined **GirlScript Summer of Code** in 2026. I [tested CommitPulse's streak calculation](https://github.com/JhaSourav07/commitpulse/pull/1853) against a large spike in one day's commits and [added parser coverage for SecuScan's URL fuzzer](https://github.com/utksh1/SecuScan/pull/779).
 
 **Tools I reach for** · Python, PyTorch, FastAPI, Next.js, Redis, Qdrant, Docker
+
+![](assets/section-signal.svg)
+
+## GitHub activity
+
+<a href="https://github.com/Vishvadharman?tab=overview#js-contribution-activity">
+  <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Vishvadharman&amp;theme=github_dark" alt="GitHub contribution activity for Vishvadharman">
+</a>
+
+<img width="100%" src="https://raw.githubusercontent.com/Vishvadharman/Vishvadharman/output/snake.svg" alt="Animated snake tracing Vishvadharman's GitHub contributions">
