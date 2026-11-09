@@ -3,6 +3,7 @@
 Run: python scripts/build-terminal.py
 """
 import os
+from collections import deque
 from functools import lru_cache
 from pathlib import Path
 
@@ -21,10 +22,10 @@ MINT = "#83edbb"
 VIOLET = "#d6b8ff"
 AMBER = "#ffd689"
 CORAL = "#ffaf9d"
-CHARS = "01.:+=#@"
+PORTRAIT_GRID = Path(__file__).with_name("portrait-tone-grid.png")
 FRAME_MS = 60
 SCENES = (
-    (3000, "./field-console", "SYSTEM BOOT", CORAL, (
+    (5400, "./field-console", "SYSTEM BOOT", CORAL, (
         ("boot", "initialize demo shell"), ("load", "document AI / vehicle AI"),
         ("load", "portable agent memory"), ("ok", "console online"),
     )),
@@ -40,7 +41,7 @@ SCENES = (
         ("open", "encrypted USB memory"), ("read", "load saved context"),
         ("move", "resume on another machine"), ("ok", "agent context restored"),
     )),
-    (4700, "whoami", "ENGINEER PROFILE", AMBER, (
+    (9600, "whoami", "ENGINEER PROFILE", AMBER, (
         ("name", "Vishvadharman Saminathan"), ("work", "AI engineering / research"),
         ("base", "Chennai, India"), ("exit", "session complete"),
     )),
@@ -78,6 +79,102 @@ def tint(base, accent, strength):
                  for a, b in zip(ImageColor.getrgb(base), ImageColor.getrgb(accent)))
 
 
+@lru_cache
+def portrait_grid():
+    """Read the low-resolution color samples used to paint binary glyphs."""
+    with Image.open(PORTRAIT_GRID) as image:
+        samples = image.convert("RGB")
+    width, height = samples.size
+    edges = deque((x, y) for y in range(height) for x in range(width)
+                  if x in (0, width - 1) or y in (0, height - 1))
+    background = set()
+    while edges:
+        x, y = edges.popleft()
+        if (x, y) in background or not (0 <= x < width and 0 <= y < height):
+            continue
+        r, g, b = samples.getpixel((x, y))
+        if min(r, g, b) < 223 or max(r, g, b) - min(r, g, b) > 24:
+            continue
+        background.add((x, y))
+        edges.extend(((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)))
+
+    underlay = Image.new("RGBA", samples.size)
+    for y in range(height):
+        for x in range(width):
+            if (x, y) not in background:
+                r, g, b = samples.getpixel((x, y))
+                underlay.putpixel((x, y), (round(18 + r * .73), round(21 + g * .70),
+                                             round(32 + b * .67), 255))
+
+    cell = 4
+    cols, rows = width // cell, height // cell
+    glyph_samples = samples.resize((cols, rows), Image.Resampling.BOX)
+    pixels = [[] for _ in range(rows)]
+    for y in range(rows):
+        for x in range(cols):
+            subject_pixels = sum((x * cell + dx, y * cell + dy) not in background
+                                 for dx in range(cell) for dy in range(cell))
+            if subject_pixels < cell * cell / 2:
+                continue
+            r, g, b = glyph_samples.getpixel((x, y))
+            color = (min(255, round(44 + r * .78)),
+                     min(255, round(48 + g * .75)),
+                     min(255, round(65 + b * .71)))
+            digit = str(((x * 13) ^ (y * 29) ^ (x * y * 7) ^ ((x + y) >> 2)) & 1)
+            pixels[y].append((x, digit, color))
+    return underlay, cols, rows, pixels
+
+
+@lru_cache
+def portrait_layer(width, height):
+    underlay, cols, rows, pixels = portrait_grid()
+    step_y = (height - 52) / rows
+    step_x = step_y * .82 * rows / cols
+    size = max(1, int(min(step_x / .6, step_y * 1.17)))
+    left = (width - cols * step_x) / 2
+    top = 43
+    art = Image.new("RGBA", (width, height))
+    art.paste(underlay.resize((round(cols * step_x), round(rows * step_y)), Image.Resampling.BICUBIC),
+              (round(left), top))
+    draw = ImageDraw.Draw(art)
+    for y, cells in enumerate(pixels):
+        for x, digit, color in cells:
+            point = (left + (x + .5) * step_x, top + (y + .5) * step_y)
+            line(draw, point, digit, size, color, anchor="mm")
+    return art, left, top, step_x, step_y, size
+
+
+def draw_portrait(image, draw, panel, t, accent):
+    x0, y0, x1, y1 = panel
+    art, left, top, step_x, step_y, size = portrait_layer(x1 - x0, y1 - y0)
+    image.paste(art, (x0, y0), art)
+    _, cols, rows, pixels = portrait_grid()
+    # Each pass highlights a few rows so the face stays visible between scans.
+    scan = (t * 8) % (rows + 7) - 3
+    for y in range(max(0, int(scan) - 1), min(rows, int(scan) + 3)):
+        strength = max(0, .25 * (1 - abs(y - scan) / 2))
+        for x, digit, color in pixels[y]:
+            glow = tuple(round(channel + (255 - channel) * strength) for channel in color)
+            point = (x0 + left + (x + .5) * step_x, y0 + top + (y + .5) * step_y)
+            line(draw, point, digit, size, glow, anchor="mm")
+
+    frame_color = tint(PANEL, accent, .46)
+    inner_left = round(x0 + left - 18)
+    inner_right = round(x0 + left + cols * step_x + 18)
+    for x, direction in ((inner_left, 1), (inner_right, -1)):
+        draw.line([(x, y0 + 61), (x, y0 + 48), (x + 13 * direction, y0 + 48)], fill=frame_color)
+        draw.line([(x, y1 - 23), (x, y1 - 10), (x + 13 * direction, y1 - 10)], fill=frame_color)
+
+    side_color = tint(PANEL, accent, .22)
+    for row in range(6):
+        bits = format((row * 11 + 5) % 32, "05b")
+        if row == int(t * 2) % 6:
+            bits = format((row * 11 + int(t * 8)) % 32, "05b")
+        y = y0 + 60 + row * (y1 - y0 - 82) / 6
+        line(draw, (x0 + 18, y), bits, 10, side_color)
+        line(draw, (x1 - 18, y), bits[::-1], 10, side_color, anchor="rt")
+
+
 def diagram(draw, panel, scene, t, accent):
     """Draw the active terminal program on a fixed character grid."""
     x0, y0, x1, y1 = panel
@@ -102,22 +199,7 @@ def diagram(draw, panel, scene, t, accent):
             px, py = points[(pos + offset) % len(points)]
             put(px, py, c, color)
 
-    if scene in (0, 4):
-        sweep = int(t * 13) % 35 - 5
-        for y in range(12):
-            for x in range(29):
-                near = abs(x - (5+y*.78)) < 2.65 or abs(x - (23-y*.78)) < 2.65
-                if near and 0 < y < 11:
-                    wave = abs(x - sweep + y*.28)
-                    value = CHARS[(x*7 + y*11 + (int(t*9) if wave < 3 else 0)) % len(CHARS)]
-                    put(x, y, value, WHITE if wave < 1.25 else accent if wave < 4 else tint(BG, accent, .53))
-                elif (y*5 + x*7) % 29 == 4:
-                    put(x, y, ".", GRID)
-        put(0, 0, "[-", MUTED)
-        put(27, 0, "-]", MUTED)
-        put(0, 11, "[-", MUTED)
-        put(27, 11, "-]", MUTED)
-    elif scene == 1:
+    if scene == 1:
         row = min(9, 3 + int(max(0, t - .4) * 2) % 7)
         for left, label in ((1, "REF"), (17, "DRAFT")):
             put(left, 0, "+---------+", "#527e91")
@@ -232,8 +314,12 @@ def render(ms, mobile=False):
     a, b, c, _ = panel
     draw.line((a+1, b+34, c-1, b+34), fill=border)
     line(draw, (a+12, b+9), label, 17, accent, True, mono=False)
-    line(draw, (c-12, b+10), "ASCII", 15, MUTED, anchor="rt", mono=False)
-    diagram(draw, panel, index, t, accent)
+    has_portrait = index == 0 or index == len(SCENES) - 1
+    line(draw, (c-12, b+10), "BINARY" if has_portrait else "ASCII", 15, MUTED, anchor="rt", mono=False)
+    if has_portrait:
+        draw_portrait(im, draw, panel, t, accent)
+    else:
+        diagram(draw, panel, index, t, accent)
     base_y = height - 47
     draw.line((2, base_y, width-3, base_y), fill=border)
     line(draw, (x, base_y+15), "Loop playback", 16, MUTED, True, mono=False)
@@ -255,14 +341,14 @@ def export(mobile):
     palette_board = Image.new("RGB", (samples[0].width, samples[0].height*len(samples)))
     for i, sample in enumerate(samples):
         palette_board.paste(sample, (0, i*sample.height))
-    palette = palette_board.quantize(colors=128)
+    palette = palette_board.quantize(colors=192)
     frames = [render(ms, mobile).quantize(palette=palette, dither=Image.Dither.NONE)
               for ms in range(0, TOTAL, FRAME_MS)]
-    gif = OUTPUT / f"spectrum-console{suffix}.gif"
+    gif = OUTPUT / f"binary-console{suffix}.gif"
     frames[0].save(gif, save_all=True, append_images=frames[1:], duration=FRAME_MS,
                    loop=0, disposal=1, optimize=True)
     still = render(sum(s[0] for s in SCENES[:-1])+2640, mobile)
-    still.save(OUTPUT / f"spectrum-console{suffix}-still.png", optimize=True)
+    still.save(OUTPUT / f"binary-console{suffix}-still.png", optimize=True)
     print(f"{gif.name}: {gif.stat().st_size:,} bytes, {len(frames)} source frames")
 
 
