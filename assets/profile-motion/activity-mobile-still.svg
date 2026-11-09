@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="206" viewBox="0 0 420 206" role="img" aria-labelledby="title">
-<title id="title">270 public contributions in the last year. Snapshot NOV 9, 2026.</title>
-<style>@media(prefers-reduced-motion:reduce){.animated{display:none}}</style>
+<title id="title">271 public contributions in the last year. Snapshot NOV 9, 2026.</title>
+<style>.animated{display:none}</style>
 <defs>
 <linearGradient id="surface" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#101820"/><stop offset="1" stop-color="#121a22"/></linearGradient>
-<linearGradient id="word-light" gradientUnits="userSpaceOnUse" x1="-113" x2="0" y1="0" y2="0"><stop stop-color="#8bdec6" stop-opacity="0"/><stop offset=".42" stop-color="#8bdec6" stop-opacity=".78"/><stop offset=".62" stop-color="#f1fcff" stop-opacity=".92"/><stop offset="1" stop-color="#8bdec6" stop-opacity="0"/><animate attributeName="x1" dur="9.4s" repeatCount="indefinite" values="-113;-113;533;533" keyTimes="0.000000;0.097872;0.637872;1.000000"/><animate attributeName="x2" dur="9.4s" repeatCount="indefinite" values="0;0;646;646" keyTimes="0.000000;0.097872;0.637872;1.000000"/></linearGradient>
+<linearGradient id="word-light" gradientUnits="userSpaceOnUse" x1="-113" x2="0" y1="0" y2="0"><stop stop-color="#8bdec6" stop-opacity="0"/><stop offset=".42" stop-color="#8bdec6" stop-opacity=".78"/><stop offset=".62" stop-color="#f1fcff" stop-opacity=".92"/><stop offset="1" stop-color="#8bdec6" stop-opacity="0"/></linearGradient>
 </defs>
 <rect x=".5" y=".5" width="419" height="205" rx="13" fill="url(#surface)" stroke="#8bdec6" stroke-opacity=".31"/>
 <path d="M20 1H400" stroke="#8bdec6" stroke-opacity=".11"/><path class="animated" d="M20 1H400" stroke="url(#word-light)" stroke-width="1"/>
@@ -69,12 +69,12 @@
 <rect x="371.32" y="156" width="5.77" height="2" rx="1.4" fill="#294b45"/>
 <rect x="378.49" y="156" width="5.77" height="2" rx="1.4" fill="#294b45"/>
 <rect x="385.66" y="156" width="5.77" height="2" rx="1.4" fill="#294b45"/>
-<rect x="392.83" y="148" width="5.77" height="10" rx="1.4" fill="#579e8c"/>
-<rect x="392.83" y="148" width="5.77" height="10" rx="1.4" fill="url(#word-light)" class="animated"/>
+<rect x="392.83" y="146" width="5.77" height="12" rx="1.4" fill="#579e8c"/>
+<rect x="392.83" y="146" width="5.77" height="12" rx="1.4" fill="url(#word-light)" class="animated"/>
 <text x="20" y="29" text-anchor="start" font-family="Consolas, ui-monospace, monospace" font-size="12" font-weight="700" fill="#8bdec6">04  /  GITHUB ACTIVITY</text>
 <text x="20" y="29" text-anchor="start" font-family="Consolas, ui-monospace, monospace" font-size="12" font-weight="700" class="animated" fill="url(#word-light)" opacity="0.83">04  /  GITHUB ACTIVITY</text>
-<text x="20" y="72" text-anchor="start" font-family="system-ui, Segoe UI, sans-serif" font-size="30" font-weight="700" letter-spacing="-.025em" fill="#f2f6f9">270 public contributions</text>
-<text x="20" y="72" text-anchor="start" font-family="system-ui, Segoe UI, sans-serif" font-size="30" font-weight="700" letter-spacing="-.025em" class="animated" fill="url(#word-light)" opacity="0.83">270 public contributions</text>
+<text x="20" y="72" text-anchor="start" font-family="system-ui, Segoe UI, sans-serif" font-size="30" font-weight="700" letter-spacing="-.025em" fill="#f2f6f9">271 public contributions</text>
+<text x="20" y="72" text-anchor="start" font-family="system-ui, Segoe UI, sans-serif" font-size="30" font-weight="700" letter-spacing="-.025em" class="animated" fill="url(#word-light)" opacity="0.83">271 public contributions</text>
 <text x="20" y="187" text-anchor="start" font-family="Consolas, ui-monospace, monospace" font-size="11" font-weight="700" fill="#adccc5">WEEKLY ACTIVITY  /  SNAPSHOT NOV 9, 2026</text>
 <text x="20" y="187" text-anchor="start" font-family="Consolas, ui-monospace, monospace" font-size="11" font-weight="700" class="animated" fill="url(#word-light)" opacity="0.83">WEEKLY ACTIVITY  /  SNAPSHOT NOV 9, 2026</text>
 </svg>

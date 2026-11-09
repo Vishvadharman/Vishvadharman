@@ -2,7 +2,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 const root = new URL('../', import.meta.url);
-const directory = new URL('assets/dossier/', root);
+const directory = new URL('assets/profile-motion/', root);
 const site = 'https://vishvadharman-portfolio.vercel.app';
 const profile = 'https://github.com/Vishvadharman';
 const contributionPage = profile + '?tab=overview#js-contribution-activity';
@@ -295,8 +295,8 @@ function activityCard(data, width) {
   return picture.finish();
 }
 
-const path = id => 'assets/dossier/' + id + '.svg';
-const mobilePath = id => 'assets/dossier/' + id + '-mobile.svg';
+const path = id => 'assets/profile-motion/' + id + '.svg';
+const mobilePath = id => 'assets/profile-motion/' + id + '-mobile.svg';
 function embed(id, alt, link) {
   const tag = '<picture><source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="' + path(id + '-mobile-still') +
     '"><source media="(prefers-reduced-motion: reduce)" srcset="' + path(id + '-still') +
