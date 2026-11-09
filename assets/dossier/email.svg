@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="56" viewBox="0 0 300 56" role="img" aria-labelledby="title">
+<title id="title">Email</title>
+<style>.still{display:none}@media(prefers-reduced-motion:reduce){.animated{display:none}.still{display:inline}}</style>
+<defs><linearGradient id="surface" x2="1" y2="1"><stop stop-color="#0b1015"/><stop offset="1" stop-color="#14212a"/></linearGradient>
+<linearGradient id="sweep"><stop stop-color="#8bc8df" stop-opacity="0"/><stop offset=".86" stop-color="#8bc8df" stop-opacity=".64"/><stop offset="1" stop-color="#edf9ff"/></linearGradient>
+<clipPath id="reveal-1"><rect x="30" y="12.060000000000002" width="270" height="32.13"><animate attributeName="width" dur="10.7s" repeatCount="indefinite" values="270;0;0;16;38;54;61;77;84;91;270;270" keyTimes="0.000000;0.014953;0.036449;0.039252;0.042056;0.044860;0.047664;0.050467;0.053271;0.056075;0.058879;1.000000" calcMode="discrete"/></rect></clipPath>
+</defs>
+<rect x=".5" y=".5" width="299" height="55" rx="10" fill="url(#surface)" stroke="#345060"/>
+<path d="M0 39h300" stroke="#8eb0c4" stroke-opacity=".05"/>
+<g class="animated"><rect x="-168" y="1" width="168" height="2" rx="1" fill="url(#sweep)"><animate attributeName="x" dur="10.7s" repeatCount="indefinite" values="-168;300;300" keyTimes="0.000000;0.610000;1.000000"/></rect></g>
+<circle cx="18" cy="28" r="3" fill="#8de0c1"/>
+<g class="animated" clip-path="url(#reveal-1)"><text x="30" y="36" fill="#e5f4fa" font-family="Consolas, ui-monospace, monospace" font-size="21" font-weight="700">EMAIL  ↗</text></g><g class="still"><text x="30" y="36" fill="#e5f4fa" font-family="Consolas, ui-monospace, monospace" font-size="21" font-weight="700">EMAIL  ↗</text></g>
+<g class="animated"><rect x="30" y="19.83" width="2" height="20.16" fill="#a8ddeb" opacity="0"><animate attributeName="x" dur="10.7s" repeatCount="indefinite" values="30;30;30;46;68;84;91;107;114;121;135;30" keyTimes="0.000000;0.014953;0.036449;0.039252;0.042056;0.044860;0.047664;0.050467;0.053271;0.056075;0.058879;1.000000" calcMode="discrete"/><animate attributeName="opacity" dur="10.7s" repeatCount="indefinite" values="0;0.9;0.9;0;0" keyTimes="0.000000;0.036449;0.056860;0.069159;1.000000"/></rect></g>
+</svg>

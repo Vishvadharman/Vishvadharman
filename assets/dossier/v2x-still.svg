@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="194" viewBox="0 0 960 194" role="img" aria-labelledby="title">
+<title id="title">Federated learning for V2X. FIRST AUTHOR  /  CMES 2026. We used SUMO traffic simulations to test how a shared accident detector responds to fake vehicle identities and poisoned model updates.. READ PAPER</title>
+<style>.animated{display:none}</style>
+<defs><linearGradient id="surface" x2="1" y2="1"><stop stop-color="#0b1015"/><stop offset="1" stop-color="#14212a"/></linearGradient>
+<linearGradient id="sweep"><stop stop-color="#b5adf4" stop-opacity="0"/><stop offset=".86" stop-color="#b5adf4" stop-opacity=".64"/><stop offset="1" stop-color="#edf9ff"/></linearGradient>
+<clipPath id="reveal-1"><rect x="29" y="14.180000000000001" width="931" height="19.89"></rect></clipPath>
+<clipPath id="reveal-2"><rect x="29" y="23.96" width="931" height="55.08"></rect></clipPath>
+<clipPath id="reveal-3"><rect x="29" y="74.92" width="931" height="33.660000000000004"></rect></clipPath>
+<clipPath id="reveal-4"><rect x="29" y="104.92" width="931" height="33.660000000000004"></rect></clipPath>
+<clipPath id="reveal-5"><rect x="29" y="156.04" width="931" height="21.42"></rect></clipPath>
+</defs>
+<rect x=".5" y=".5" width="959" height="193" rx="10" fill="url(#surface)" stroke="#345060"/>
+<path d="M0 135h960" stroke="#8eb0c4" stroke-opacity=".05"/>
+<g class="animated"><rect x="-168" y="1" width="168" height="2" rx="1" fill="url(#sweep)"></rect></g>
+<g transform="translate(874 31) scale(0.92)" fill="none" stroke="#b5adf4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path opacity=".15" d="M7 44h42 M7 8v36 M9 35l10-7 7 6 8-19 7 7 7-11"/><path class="animated" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0" opacity=".74" d="M7 44h42 M7 8v36 M9 35l10-7 7 6 8-19 7 7 7-11"></path></g>
+<g class="animated" clip-path="url(#reveal-1)"><text x="29" y="29" fill="#93bdcc" font-family="Consolas, ui-monospace, monospace" font-size="13" font-weight="700">FIRST AUTHOR / CMES 2026</text></g><g class="still"><text x="29" y="29" fill="#93bdcc" font-family="Consolas, ui-monospace, monospace" font-size="13" font-weight="700">FIRST AUTHOR / CMES 2026</text></g>
+<g class="animated" clip-path="url(#reveal-2)"><text x="29" y="65" fill="#f3f6f8" font-family="system-ui, Segoe UI, sans-serif" font-size="36" font-weight="700">Federated learning for V2X</text></g><g class="still"><text x="29" y="65" fill="#f3f6f8" font-family="system-ui, Segoe UI, sans-serif" font-size="36" font-weight="700">Federated learning for V2X</text></g>
+<g class="animated" clip-path="url(#reveal-3)"><text x="29" y="100" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="22" font-weight="450">We used SUMO traffic simulations to test how a shared accident</text></g><g class="still"><text x="29" y="100" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="22" font-weight="450">We used SUMO traffic simulations to test how a shared accident</text></g>
+<g class="animated" clip-path="url(#reveal-4)"><text x="29" y="130" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="22" font-weight="450">detector responds to fake vehicle identities and poisoned model updates.</text></g><g class="still"><text x="29" y="130" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="22" font-weight="450">detector responds to fake vehicle identities and poisoned model updates.</text></g>
+<path d="M29 149h902" stroke="#355565"/>
+<g class="animated" clip-path="url(#reveal-5)"><text x="29" y="172" fill="#ade2f1" font-family="Consolas, ui-monospace, monospace" font-size="14" font-weight="700">READ PAPER ↗</text></g><g class="still"><text x="29" y="172" fill="#ade2f1" font-family="Consolas, ui-monospace, monospace" font-size="14" font-weight="700">READ PAPER ↗</text></g>
+<g class="animated"><rect x="29" y="37.28" width="2" height="34.56" fill="#a8ddeb" opacity="0"></rect>
+<rect x="29" y="83.06" width="2" height="21.119999999999997" fill="#a8ddeb" opacity="0"></rect>
+<rect x="29" y="113.06" width="2" height="21.119999999999997" fill="#a8ddeb" opacity="0"></rect>
+<rect x="29" y="161.22" width="2" height="13.44" fill="#a8ddeb" opacity="0"></rect></g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="126" viewBox="0 0 960 126" role="img" aria-labelledby="title">
+<title id="title">Working toolkit. TOOLS I REACH FOR. Python · PyTorch · FastAPI · Next.js · Redis · Qdrant · Docker</title>
+<style>.animated{display:none}</style>
+<defs><linearGradient id="surface" x2="1" y2="1"><stop stop-color="#0b1015"/><stop offset="1" stop-color="#14212a"/></linearGradient>
+<linearGradient id="sweep"><stop stop-color="#8bdec6" stop-opacity="0"/><stop offset=".86" stop-color="#8bdec6" stop-opacity=".64"/><stop offset="1" stop-color="#edf9ff"/></linearGradient>
+<clipPath id="reveal-1"><rect x="29" y="14.180000000000001" width="931" height="19.89"></rect></clipPath>
+<clipPath id="reveal-2"><rect x="29" y="23.96" width="931" height="55.08"></rect></clipPath>
+<clipPath id="reveal-3"><rect x="29" y="74.92" width="931" height="33.660000000000004"></rect></clipPath>
+</defs>
+<rect x=".5" y=".5" width="959" height="125" rx="10" fill="url(#surface)" stroke="#345060"/>
+<path d="M0 88h960" stroke="#8eb0c4" stroke-opacity=".05"/>
+<g class="animated"><rect x="-168" y="1" width="168" height="2" rx="1" fill="url(#sweep)"></rect></g>
+<g transform="translate(874 31) scale(0.92)" fill="none" stroke="#8bdec6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path opacity=".15" d="M14 15h28v28H14z M21 22h14v14H21z M19 8v7 M28 8v7 M37 8v7 M19 43v7 M28 43v7 M37 43v7 M7 20h7 M7 29h7 M7 38h7 M42 20h7 M42 29h7 M42 38h7"/><path class="animated" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0" opacity=".74" d="M14 15h28v28H14z M21 22h14v14H21z M19 8v7 M28 8v7 M37 8v7 M19 43v7 M28 43v7 M37 43v7 M7 20h7 M7 29h7 M7 38h7 M42 20h7 M42 29h7 M42 38h7"></path></g>
+<g class="animated" clip-path="url(#reveal-1)"><text x="29" y="29" fill="#93bdcc" font-family="Consolas, ui-monospace, monospace" font-size="13" font-weight="700">TOOLS I REACH FOR</text></g><g class="still"><text x="29" y="29" fill="#93bdcc" font-family="Consolas, ui-monospace, monospace" font-size="13" font-weight="700">TOOLS I REACH FOR</text></g>
+<g class="animated" clip-path="url(#reveal-2)"><text x="29" y="65" fill="#f3f6f8" font-family="system-ui, Segoe UI, sans-serif" font-size="36" font-weight="700">Working toolkit</text></g><g class="still"><text x="29" y="65" fill="#f3f6f8" font-family="system-ui, Segoe UI, sans-serif" font-size="36" font-weight="700">Working toolkit</text></g>
+<g class="animated" clip-path="url(#reveal-3)"><text x="29" y="100" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="22" font-weight="450">Python · PyTorch · FastAPI · Next.js · Redis · Qdrant · Docker</text></g><g class="still"><text x="29" y="100" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="22" font-weight="450">Python · PyTorch · FastAPI · Next.js · Redis · Qdrant · Docker</text></g>
+<g class="animated"><rect x="29" y="37.28" width="2" height="34.56" fill="#a8ddeb" opacity="0"></rect>
+<rect x="29" y="83.06" width="2" height="21.119999999999997" fill="#a8ddeb" opacity="0"></rect></g>
+</svg>

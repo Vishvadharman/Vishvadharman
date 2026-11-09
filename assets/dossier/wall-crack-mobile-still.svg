@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="191" viewBox="0 0 420 191" role="img" aria-labelledby="title">
+<title id="title">Wall Crack Detection. PYTORCH  /  COMPUTER VISION. Fine-tunes a ResNet-18 classifier on images of walls.. VIEW CODE</title>
+<style>.animated{display:none}</style>
+<defs><linearGradient id="surface" x2="1" y2="1"><stop stop-color="#0b1015"/><stop offset="1" stop-color="#14212a"/></linearGradient>
+<linearGradient id="sweep"><stop stop-color="#8bc8df" stop-opacity="0"/><stop offset=".86" stop-color="#8bc8df" stop-opacity=".64"/><stop offset="1" stop-color="#edf9ff"/></linearGradient>
+<clipPath id="reveal-1"><rect x="20" y="16.46" width="400" height="16.830000000000002"></rect></clipPath>
+<clipPath id="reveal-2"><rect x="20" y="31.940000000000005" width="400" height="44.37"></rect></clipPath>
+<clipPath id="reveal-3"><rect x="20" y="76.2" width="400" height="30.6"></rect></clipPath>
+<clipPath id="reveal-4"><rect x="20" y="104.2" width="400" height="30.6"></rect></clipPath>
+<clipPath id="reveal-5"><rect x="20" y="155.32" width="400" height="18.36"></rect></clipPath>
+</defs>
+<rect x=".5" y=".5" width="419" height="190" rx="10" fill="url(#surface)" stroke="#345060"/>
+<path d="M0 133h420" stroke="#8eb0c4" stroke-opacity=".05"/>
+<g class="animated"><rect x="-168" y="1" width="168" height="2" rx="1" fill="url(#sweep)"></rect></g>
+<g transform="translate(368 13) scale(0.48)" fill="none" stroke="#8bc8df" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path opacity=".15" d="M7 19V8h11 M38 8h11v11 M49 37v11H38 M18 48H7V37 M10 28c11-16 25-16 36 0-11 16-25 16-36 0z M32 28a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"/><path class="animated" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0" opacity=".74" d="M7 19V8h11 M38 8h11v11 M49 37v11H38 M18 48H7V37 M10 28c11-16 25-16 36 0-11 16-25 16-36 0z M32 28a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"></path></g>
+<g class="animated" clip-path="url(#reveal-1)"><text x="20" y="29" fill="#93bdcc" font-family="Consolas, ui-monospace, monospace" font-size="11" font-weight="700">PYTORCH / COMPUTER VISION</text></g><g class="still"><text x="20" y="29" fill="#93bdcc" font-family="Consolas, ui-monospace, monospace" font-size="11" font-weight="700">PYTORCH / COMPUTER VISION</text></g>
+<g class="animated" clip-path="url(#reveal-2)"><text x="20" y="65" fill="#f3f6f8" font-family="system-ui, Segoe UI, sans-serif" font-size="29" font-weight="700">Wall Crack Detection</text></g><g class="still"><text x="20" y="65" fill="#f3f6f8" font-family="system-ui, Segoe UI, sans-serif" font-size="29" font-weight="700">Wall Crack Detection</text></g>
+<g class="animated" clip-path="url(#reveal-3)"><text x="20" y="99" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="20" font-weight="450">Fine-tunes a ResNet-18 classifier</text></g><g class="still"><text x="20" y="99" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="20" font-weight="450">Fine-tunes a ResNet-18 classifier</text></g>
+<g class="animated" clip-path="url(#reveal-4)"><text x="20" y="127" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="20" font-weight="450">on images of walls.</text></g><g class="still"><text x="20" y="127" fill="#dae5eb" font-family="system-ui, Segoe UI, sans-serif" font-size="20" font-weight="450">on images of walls.</text></g>
+<path d="M20 146h380" stroke="#355565"/>
+<g class="animated" clip-path="url(#reveal-5)"><text x="20" y="169" fill="#ade2f1" font-family="Consolas, ui-monospace, monospace" font-size="12" font-weight="700">VIEW CODE ↗</text></g><g class="still"><text x="20" y="169" fill="#ade2f1" font-family="Consolas, ui-monospace, monospace" font-size="12" font-weight="700">VIEW CODE ↗</text></g>
+<g class="animated"><rect x="20" y="42.67" width="2" height="27.84" fill="#a8ddeb" opacity="0"></rect>
+<rect x="20" y="83.6" width="2" height="19.2" fill="#a8ddeb" opacity="0"></rect>
+<rect x="20" y="111.6" width="2" height="19.2" fill="#a8ddeb" opacity="0"></rect>
+<rect x="20" y="159.76" width="2" height="11.52" fill="#a8ddeb" opacity="0"></rect></g>
+</svg>
