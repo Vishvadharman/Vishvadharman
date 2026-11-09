@@ -32,9 +32,9 @@ const groups = [
     id: 'work', index: '01', title: 'Selected work', signal: 'DOCUMENT AI  /  MEMORY  /  VEHICLE SECURITY',
     entries: [
       {
-        id: 'deviation', title: 'DeviationAI', tag: 'MAVDERO TECHSERVICES  /  DOCUMENT AI',
+        id: 'deviation-overview', title: 'DeviationAI', tag: 'MAVDERO TECHSERVICES  /  DOCUMENT AI',
         body: 'Compares legal drafts against a reference and links each finding to the source wording.',
-        link: 'https://deviation-ai-review.vercel.app/', action: 'Open demo', icon: 'document',
+        icon: 'document',
       },
       {
         id: 'brainvault', title: 'HippocampAI / BrainVault', tag: 'SANDISK HACKATHON  /  RUNNER-UP',
@@ -196,7 +196,7 @@ function scene(width, height, description, period, theme, phase = .16, kind = 'r
 function projectCard(item, width, index, theme) {
   const { accent, highlight } = theme;
   const narrow = width === 420;
-  const featured = ['intro', 'deviation', 'v2x'].includes(item.id);
+  const featured = ['intro', 'deviation-overview', 'v2x'].includes(item.id);
   const x = narrow ? 20 : 28;
   const titleSize = featured ? (narrow ? 33 : 45) : (narrow ? 29 : 34);
   const bodySize = narrow ? 20 : 22;
