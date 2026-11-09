@@ -124,120 +124,133 @@ function wrap(text, size, maxWidth, bold = false) {
   return lines;
 }
 
-function scene(width, height, description, period, accent = '#8bc8df', phase = .16) {
-  const defs = [];
+function scene(width, height, description, period, accent = '#8bc8df', phase = .16, kind = 'row') {
   const content = [];
-  const cursors = [];
-  let count = 0;
+  const textLayers = [];
   const t = seconds => (seconds / period).toFixed(6);
-  const motion = (attribute, values, times, discrete = false) =>
+  const track = (attribute, values, times) =>
     '<animate attributeName="' + attribute + '" dur="' + period + 's" repeatCount="indefinite" values="' +
-      values.join(';') + '" keyTimes="' + times.map(t).join(';') + '"' + (discrete ? ' calcMode="discrete"' : '') + '/>';
-  function line(text, x, y, size, { bold = false, color = '#dae5eb', delay = .25, cursor = true, mono = false } = {}) {
-    const id = 'reveal-' + ++count;
+      values.join(';') + '" keyTimes="' + times.map(t).join(';') + '"/>';
+  const band = Math.round(width * .27);
+  const scan = (offset = 0) => {
+    const start = -band + offset;
+    const end = width + band + offset;
+    return [start, start, end, end];
+  };
+  const scanTimes = [0, phase, phase + period * .54, period];
+  function line(text, x, y, size, { bold = false, color = '#c9d5df', mono = false, shine = bold ? .83 : .63, align = 'start' } = {}) {
     const family = mono ? 'Consolas, ui-monospace, monospace' : 'system-ui, Segoe UI, sans-serif';
-    const start = phase + delay;
-    const span = Math.min(.96, Math.max(.24, text.length * .021));
-    const characters = [...text];
-    const increments = characters.map((_, index) => {
-      const part = characters.slice(0, index + 1).join('');
-      return Math.min(width - x, Math.round(widthOf(part, size, bold) * 1.08));
-    });
-    const full = width - x;
-    const typeTimes = [0, phase, start, ...characters.map((_, index) => start + (index + 1) * span / characters.length), period];
-    const typeWidths = [full, 0, 0, ...increments.slice(0, -1), full, full];
-    defs.push('<clipPath id="' + id + '"><rect x="' + x + '" y="' + (y - size * 1.14) +
-      '" width="' + full + '" height="' + (size * 1.53) + '">' + motion('width', typeWidths, typeTimes, true) + '</rect></clipPath>');
-    const label = '<text x="' + x + '" y="' + y + '" fill="' + color + '" font-family="' + family +
-      '" font-size="' + size + '" font-weight="' + (bold ? '700' : '450') + '">' + escape(text) + '</text>';
-    content.push('<g class="animated" clip-path="url(#' + id + ')">' + label + '</g><g class="still">' + label + '</g>');
-    if (cursor) {
-      const xs = [x, x, x, ...increments.map(value => Math.min(width - 7, x + value)), x];
-      cursors.push('<rect x="' + x + '" y="' + (y - size * .77) + '" width="2" height="' + (size * .96) +
-        '" fill="#a8ddeb" opacity="0">' + motion('x', xs, typeTimes, true) +
-        motion('opacity', [0, .9, .9, 0, 0], [0, start, start + span * .91, start + span + .11, period]) + '</rect>');
-    }
+    const label = '<text x="' + x + '" y="' + y + '" text-anchor="' + align + '" font-family="' + family +
+      '" font-size="' + size + '" font-weight="' + (bold ? '700' : '450') + '"' +
+      (bold && !mono ? ' letter-spacing="-.025em"' : '');
+    const words = '>' + escape(text) + '</text>';
+    textLayers.push(label + ' fill="' + color + '"' + words);
+    if (shine) textLayers.push(label + ' class="animated" fill="url(#word-light)" opacity="' + shine + '"' + words);
   }
   function finish() {
+    const divider = kind === 'divider';
+    const prominent = kind === 'lead' || kind === 'activity';
+    const inset = width === 420 ? 20 : 28;
+    const railY = divider ? height - 5 : prominent ? 1 : height - 1;
     return [
       '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '" viewBox="0 0 ' + width + ' ' + height + '" role="img" aria-labelledby="title">',
       '<title id="title">' + escape(description) + '</title>',
-      '<style>.still{display:none}@media(prefers-reduced-motion:reduce){.animated{display:none}.still{display:inline}}</style>',
-      '<defs><linearGradient id="surface" x2="1" y2="1"><stop stop-color="#0b1015"/><stop offset="1" stop-color="#14212a"/></linearGradient>',
-      '<linearGradient id="sweep"><stop stop-color="' + accent + '" stop-opacity="0"/><stop offset=".86" stop-color="' + accent + '" stop-opacity=".64"/><stop offset="1" stop-color="#edf9ff"/></linearGradient>',
-      ...defs,
+      '<style>@media(prefers-reduced-motion:reduce){.animated{display:none}}</style>',
+      '<defs>',
+      '<linearGradient id="surface" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#101820"/><stop offset="1" stop-color="#121a22"/></linearGradient>',
+      '<linearGradient id="word-light" gradientUnits="userSpaceOnUse" x1="' + (-band) + '" x2="0" y1="0" y2="0">' +
+        '<stop stop-color="' + accent + '" stop-opacity="0"/><stop offset=".42" stop-color="' + accent + '" stop-opacity=".78"/>' +
+        '<stop offset=".62" stop-color="#f1fcff" stop-opacity=".92"/><stop offset="1" stop-color="' + accent + '" stop-opacity="0"/>' +
+        track('x1', scan(), scanTimes) + track('x2', scan(band), scanTimes) + '</linearGradient>',
       '</defs>',
-      '<rect x=".5" y=".5" width="' + (width - 1) + '" height="' + (height - 1) + '" rx="10" fill="url(#surface)" stroke="#345060"/>',
-      '<path d="M0 ' + Math.floor(height * .7) + 'h' + width + '" stroke="#8eb0c4" stroke-opacity=".05"/>',
-      '<g class="animated"><rect x="-168" y="1" width="168" height="2" rx="1" fill="url(#sweep)">' +
-        motion('x', [-168, width, width], [0, period * .61, period]) + '</rect></g>',
+      divider ? '' : '<rect x=".5" y=".5" width="' + (width - 1) + '" height="' + (height - 1) + '" rx="' + (prominent ? 13 : 8) +
+        '" fill="' + (prominent ? 'url(#surface)' : '#0e151c') + '" stroke="' + accent + '" stroke-opacity="' + (prominent ? '.31' : '.17') + '"/>',
+      kind === 'link' ? '' : '<path d="M' + inset + ' ' + railY + 'H' + (width - inset) + '" stroke="' + accent + '" stroke-opacity="' +
+        (divider ? '.35' : '.11') + '"/><path class="animated" d="M' + inset + ' ' + railY + 'H' + (width - inset) +
+        '" stroke="url(#word-light)" stroke-width="' + (divider ? 2 : 1) + '"/>',
       ...content,
-      '<g class="animated">' + cursors.join('\n') + '</g>',
+      ...textLayers,
       '</svg>',
-    ].join('\n') + '\n';
+    ].filter(Boolean).join('\n') + '\n';
   }
-  return { line, finish, content, motion };
+  return { line, finish, content, track };
 }
 
 function projectCard(item, width, index, accent) {
   const narrow = width === 420;
-  const x = narrow ? 20 : 29;
-  const titleSize = narrow ? 29 : 36;
+  const featured = item.id === 'deviation' || item.id === 'v2x';
+  const x = narrow ? 20 : 28;
+  const titleSize = featured ? (narrow ? 32 : 43) : (narrow ? 28 : 32);
   const bodySize = narrow ? 20 : 22;
-  const badge = narrow ? 11 : 13;
-  const tagWidth = width - 2 * x - (narrow ? 34 : 86);
-  const tagLines = wrap(item.tag, badge * 1.14, tagWidth, true);
-  const titleLines = wrap(item.title, titleSize, width - 2 * x - (narrow ? 4 : 92), true);
-  const bodyLines = wrap(item.body, bodySize, width - 2 * x - (narrow ? 0 : 84));
-  const titleY = 65 + (tagLines.length - 1) * 17;
-  const bodyY = titleY + (titleLines.length - 1) * (titleSize + 3) + (narrow ? 34 : 35);
-  const lineHeight = narrow ? 28 : 30;
+  const badge = narrow ? 12 : 14;
+  const tagLines = wrap(item.tag, badge, width - 2 * x - 48, true);
+  const titleLines = wrap(item.title, titleSize, width - 2 * x - (featured && !narrow ? 171 : 48), true);
+  const bodyLines = wrap(item.body, bodySize, width - 2 * x - (narrow ? 0 : featured ? 190 : item.action ? 164 : 60));
+  const titleY = (featured ? 68 : 60) + (tagLines.length - 1) * 17;
+  const bodyY = titleY + (titleLines.length - 1) * (titleSize + 3) + (featured ? 34 : 30);
+  const lineHeight = narrow ? 26 : 29;
   const bottom = bodyY + (bodyLines.length - 1) * lineHeight;
-  const height = bottom + (item.action ? 64 : 26);
-  const period = 10.4 + (index % 4) * .62;
-  const phase = .21 + (index % 5) * .39;
-  const picture = scene(width, height, [item.title, item.tag, item.body, item.action].filter(Boolean).join('. '), period, accent, phase);
+  const actionBelow = item.action && (narrow || featured);
+  const height = bottom + (actionBelow ? 55 : 23);
+  const period = 8.3 + (index % 4) * .76;
+  const phase = .22 + (index % 5) * .48;
+  const picture = scene(width, height, [item.title, item.tag, item.body, item.action].filter(Boolean).join('. '), period, accent, phase, featured ? 'lead' : 'row');
   if (item.icon) {
-    const size = narrow ? .48 : .92;
-    const left = narrow ? width - 52 : width - 86;
+    const large = featured && !narrow;
+    const scale = large ? 1.14 : narrow ? .46 : .59;
+    const left = width - x - (large ? 99 : 56 * scale);
+    const top = large ? Math.round((height - 56 * scale) / 2) : 15;
+    if (large) {
+      const cx = left + 32;
+      const cy = top + 32;
+      picture.content.push('<g fill="none" stroke="' + accent + '" stroke-width="1">' +
+        '<circle cx="' + cx + '" cy="' + cy + '" r="53" opacity=".16"/>' +
+        '<circle cx="' + cx + '" cy="' + cy + '" r="65" opacity=".12" stroke-dasharray="2 5"/>' +
+        '<path d="M' + (cx - 74) + ' ' + cy + 'h16m116 0h16m-74 -74v16m0 116v16" opacity=".25"/>' +
+        '<circle class="animated" cx="' + (cx + 53) + '" cy="' + cy + '" r="3.2" fill="' + accent + '" stroke="none">' +
+        '<animateTransform attributeName="transform" type="rotate" from="0 ' + cx + ' ' + cy + '" to="360 ' + cx + ' ' + cy +
+        '" dur="' + (period * 1.7).toFixed(2) + 's" repeatCount="indefinite"/></circle></g>');
+    }
     picture.content.push(
-      '<g transform="translate(' + left + ' ' + (narrow ? 13 : 31) + ') scale(' + size + ')" fill="none" stroke="' + accent + '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
-      '<path opacity=".15" d="' + glyphs[item.icon] + '"/><path class="animated" pathLength="100" stroke-dasharray="100" stroke-dashoffset="0" opacity=".74" d="' +
-      glyphs[item.icon] + '">' + picture.motion('stroke-dashoffset', [100, 100, 0, 0], [0, .18, 1.47, period]) + '</path></g>'
+      '<g transform="translate(' + left + ' ' + top + ') scale(' + scale + ')" fill="none" stroke="' + accent +
+      '" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path opacity="' +
+      (large ? '.86' : '.65') + '" d="' + glyphs[item.icon] + '"/></g>'
     );
   }
-  tagLines.forEach((text, i) => picture.line(text, x, 29 + i * 17, badge, { color:'#93bdcc', mono:true, bold:true, delay:.17 + i * .13, cursor:false }));
-  titleLines.forEach((text, i) => picture.line(text, x, titleY + i * (titleSize + 3), titleSize, { color:'#f3f6f8', bold:true, delay:.35 + i * .26 }));
-  bodyLines.forEach((text, i) => picture.line(text, x, bodyY + i * lineHeight, bodySize, { delay:.83 + titleLines.length * .20 + i * .23 }));
+  tagLines.forEach((text, i) => picture.line(text, x, 29 + i * 17, badge, { color:accent, mono:true, bold:true, shine:.56 }));
+  titleLines.forEach((text, i) => picture.line(text, x, titleY + i * (titleSize + 3), titleSize, { color:'#f2f6f9', bold:true }));
+  bodyLines.forEach((text, i) => picture.line(text, x, bodyY + i * lineHeight, bodySize));
   if (item.action) {
     const label = item.action + (item.link.startsWith('mailto:') ? '' : ' ↗');
-    picture.content.push('<path d="M' + x + ' ' + (bottom + 19) + 'h' + (width - 2 * x) + '" stroke="#355565"/>');
-    picture.line(label, x, bottom + 42, badge + 1, { color:'#ade2f1', mono:true, bold:true, delay:1.6 + bodyLines.length * .15 });
+    const buttonWidth = Math.ceil(label.length * badge * .62 + 24);
+    const left = actionBelow ? x : width - x - buttonWidth;
+    const top = actionBelow ? bottom + 13 : bottom - 21;
+    picture.content.push('<rect x="' + left + '" y="' + top + '" width="' + buttonWidth +
+      '" height="28" rx="5" fill="' + accent + '" fill-opacity=".07" stroke="' + accent + '" stroke-opacity=".25"/>');
+    picture.line(label, left + buttonWidth / 2, top + 19, badge, { color:accent, mono:true, bold:true, align:'middle' });
   }
   return picture.finish();
 }
 
 function sectionCard(section, width, accent) {
   const narrow = width === 420;
-  const x = narrow ? 20 : 29;
-  const size = narrow ? 34 : 44;
-  const height = narrow ? 134 : 144;
-  const picture = scene(width, height, section.title + '. ' + section.signal, 12.3, accent, .44 * Number(section.index));
-  picture.content.push('<path d="M' + x + ' ' + (height - 20) + 'h' + (width - 2 * x) + '" stroke="#385766" stroke-opacity=".8"/>');
+  const x = narrow ? 20 : 28;
+  const size = narrow ? 34 : 46;
+  const height = narrow ? 116 : 123;
+  const picture = scene(width, height, section.title + '. ' + section.signal, 9.8, accent, .35 + .43 * Number(section.index), 'divider');
   if (!narrow) {
-    picture.content.push('<path d="M775 25h154v88H775z M796 25v88 M908 25v88" fill="none" stroke="' + accent + '" opacity=".18"/>');
-    picture.line(section.index, 809, 95, 65, { color:accent, mono:true, bold:true, delay:.51, cursor:false });
+    picture.content.push('<path d="M' + (width - 156) + ' 33h128m-128 54h128m-128 -54v54m128 -54v54" fill="none" stroke="' + accent + '" opacity=".24"/>');
+    picture.line(section.index, width - 92, 76, 37, { color:accent, mono:true, bold:true, align:'middle' });
   }
-  picture.line(section.index + '  /  VISHVA', x, 28, narrow ? 12 : 13, { color:accent, mono:true, bold:true, delay:.13, cursor:false });
-  picture.line(section.title, x, narrow ? 70 : 77, size, { color:'#f3f6f8', bold:true, delay:.34 });
-  picture.line(section.signal, x, narrow ? 99 : 109, narrow ? 10 : 13, { color:'#add3e1', mono:true, bold:true, delay:1.11, cursor:false });
+  picture.line('SECTION ' + section.index, x, 29, 13, { color:accent, mono:true, bold:true });
+  picture.line(section.title, x, narrow ? 69 : 75, size, { color:'#f1f5f8', bold:true });
+  picture.line(section.signal, x, narrow ? 94 : 100, narrow ? 11 : 14, { color:'#a8b9c6', mono:true, bold:true });
   return picture.finish();
 }
 
-function contactCard(contact) {
-  const picture = scene(300, 56, contact.title, 10.7);
-  picture.content.push('<circle cx="18" cy="28" r="3" fill="#8de0c1"/>');
-  picture.line(contact.title.toUpperCase() + '  ↗', 30, 36, 21, { color:'#e5f4fa', mono:true, bold:true, delay:.23 });
+function contactCard(contact, width) {
+  const picture = scene(width, 45, contact.title, 9.6, '#8bc8df', .4 + contacts.indexOf(contact) * .53, 'link');
+  picture.line(contact.title.toUpperCase() + '  ↗', width / 2, 29, 21, { color:'#dceaf2', mono:true, bold:true, align:'middle' });
   return picture.finish();
 }
 
@@ -258,28 +271,27 @@ async function readContributionGrid() {
 
 function activityCard(data, width) {
   const narrow = width === 420;
-  const x = narrow ? 20 : 29;
-  const height = narrow ? 220 : 235;
+  const x = narrow ? 20 : 28;
+  const height = narrow ? 206 : 219;
   const total = data.total.toLocaleString('en-US');
   const date = new Intl.DateTimeFormat('en-US', { year:'numeric', month:'short', day:'numeric', timeZone:'UTC' }).format(new Date(data.date + 'T00:00:00Z')).toUpperCase();
   const title = total + ' public contributions';
-  const picture = scene(width, height, title + ' in the last year. Snapshot ' + date + '.', 12.4);
-  picture.line('04  /  GITHUB ACTIVITY', x, 29, narrow ? 12 : 13, { color:'#93bdcc', mono:true, bold:true, delay:.15 });
-  picture.line(title, x, 77, narrow ? 30 : 40, { color:'#f3f6f8', bold:true, delay:.38 });
-  const base = height - 49;
+  const accent = '#8bdec6';
+  const picture = scene(width, height, title + ' in the last year. Snapshot ' + date + '.', 9.4, accent, .92, 'activity');
+  picture.line('04  /  GITHUB ACTIVITY', x, 29, narrow ? 12 : 14, { color:accent, mono:true, bold:true });
+  picture.line(title, x, 72, narrow ? 30 : 40, { color:'#f2f6f9', bold:true });
+  const base = height - 48;
   const slot = (width - 2 * x) / data.weeks.length;
   const maximum = Math.max(1, ...data.weeks);
   data.weeks.forEach((count, i) => {
-    const bar = Math.max(2, Math.round(Math.sqrt(count / maximum) * 67));
+    const bar = Math.max(2, Math.round(Math.sqrt(count / maximum) * 65));
     const left = (x + i * slot).toFixed(2);
     const barWidth = Math.max(2, slot - (narrow ? 1.4 : 3)).toFixed(2);
-    const delay = .66 + i * .021;
-    const rect = '<rect x="' + left + '" y="' + (base - bar) + '" width="' + barWidth + '" height="' + bar + '" rx="1.4" fill="' + (count ? '#72b9ce' : '#2d4a58') + '"';
-    picture.content.push(rect + ' class="still"/>', rect + ' class="animated">' +
-      picture.motion('height', [0, 0, bar, bar], [0, delay, delay + .31, 12.4]) +
-      picture.motion('y', [base, base, base - bar, base - bar], [0, delay, delay + .31, 12.4]) + '</rect>');
+    const rect = '<rect x="' + left + '" y="' + (base - bar) + '" width="' + barWidth + '" height="' + bar + '" rx="1.4" fill="';
+    picture.content.push(rect + (count ? '#579e8c' : '#294b45') + '"/>');
+    if (count) picture.content.push(rect + 'url(#word-light)" class="animated"/>');
   });
-  picture.line('WEEKLY ACTIVITY  /  SNAPSHOT ' + date, x, height - 19, narrow ? 11 : 13, { color:'#aed0dd', mono:true, bold:true, delay:1.5, cursor:false });
+  picture.line('WEEKLY ACTIVITY  /  SNAPSHOT ' + date, x, height - 19, narrow ? 11 : 14, { color:'#adccc5', mono:true, bold:true });
   return picture.finish();
 }
 
@@ -297,13 +309,13 @@ const transcript = item => '**' + (item.link ? '[' + item.title + '](' + item.li
 
 const grid = await readContributionGrid();
 await mkdir(directory, { recursive:true });
-let order = 0;
 const accents = ['#8bc8df', '#b5adf4', '#8bdec6'];
 for (const width of [960, 420]) {
+  let order = 0;
   const suffix = width === 420 ? '-mobile' : '';
   const save = async (id, svg) => {
     await writeFile(new URL(id + suffix + '.svg', directory), svg);
-    const still = svg.replace(/<animate\b[^>]*\/>/g, '').replace(/<style>.*?<\/style>/, '<style>.animated{display:none}</style>');
+    const still = svg.replace(/<animate(?:Transform)?\b[^>]*\/>/g, '').replace(/<style>.*?<\/style>/, '<style>.animated{display:none}</style>');
     await writeFile(new URL(id + suffix + '-still.svg', directory), still);
   };
   await save(intro.id, projectCard(intro, width, order++, accents[0]));
@@ -313,8 +325,16 @@ for (const width of [960, 420]) {
   }
   await save('activity', activityCard(grid, width));
 }
-for (const contact of contacts) await writeFile(new URL(contact.id + '.svg', directory), contactCard(contact));
+for (const contact of contacts) {
+  await writeFile(new URL(contact.id + '.svg', directory), contactCard(contact, 300));
+  await writeFile(new URL(contact.id + '-mobile.svg', directory), contactCard(contact, 155));
+}
 
+const signalAlt = 'Now building document AI, researching trustworthy AI, and contributing to open source';
+const mobileSignal = scene(420, 72, signalAlt, 10.2, '#8bc8df', .4, 'link');
+mobileSignal.line('NOW BUILDING', 20, 25, 12, { color:'#8bc8df', mono:true, bold:true });
+mobileSignal.line('Document AI · Research · Open source', 20, 53, 18, { color:'#e1edf3', mono:true });
+await writeFile(new URL('build-signal-mobile.svg', directory), mobileSignal.finish());
 const cover = [
   '<a href="' + site + '/?build=1">',
   '  <picture>',
@@ -323,8 +343,10 @@ const cover = [
   '  </picture>',
   '</a>',
 ].join('\n');
-const buttons = contacts.map(contact => '<a href="' + contact.link + '"><img width="31%" src="' + path(contact.id) + '" alt="' + contact.title + '"></a>').join(' ');
-const plainText = [
+const signal = '<a href="' + site + '/?build=1"><picture><source media="(max-width: 767px)" srcset="' + mobilePath('build-signal') +
+  '"><img width="100%" src="assets/build-signal.svg" alt="' + signalAlt + '"></picture></a>';
+const buttons = contacts.map(contact => '<a href="' + contact.link + '"><picture><source media="(max-width: 767px)" srcset="' + mobilePath(contact.id) +
+  '"><img width="31%" src="' + path(contact.id) + '" alt="' + contact.title + '"></picture></a>').join(' ');const plainText = [
   '<details><summary>Text version and links</summary>',
   '',
   transcript(intro),
@@ -337,7 +359,7 @@ const plainText = [
 const readme = [
   '<!-- Generated by scripts/build-profile.mjs. Edit the source to refresh the cards and text version. -->',
   cover,
-  '<a href="' + site + '/?build=1"><img width="100%" src="assets/build-signal.svg" alt="Now building document AI, researching trustworthy AI, and contributing to open source"></a>',
+  signal,
   '<p align="center">' + buttons + '</p>',
   embed(intro.id, fullAlt(intro), intro.link),
   ...groups.flatMap(group => [embed(group.id, group.title + '. ' + group.signal), ...group.entries.map(item => embed(item.id, fullAlt(item), item.link))]),

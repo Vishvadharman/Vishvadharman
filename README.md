@@ -7,9 +7,9 @@
   </picture>
 </a>
 
-<a href="https://vishvadharman-portfolio.vercel.app/?build=1"><img width="100%" src="assets/build-signal.svg" alt="Now building document AI, researching trustworthy AI, and contributing to open source"></a>
+<a href="https://vishvadharman-portfolio.vercel.app/?build=1"><picture><source media="(max-width: 767px)" srcset="assets/dossier/build-signal-mobile.svg"><img width="100%" src="assets/build-signal.svg" alt="Now building document AI, researching trustworthy AI, and contributing to open source"></picture></a>
 
-<p align="center"><a href="https://vishvadharman-portfolio.vercel.app/?build=1"><img width="31%" src="assets/dossier/portfolio.svg" alt="Portfolio"></a> <a href="https://www.linkedin.com/in/vishvasami23/"><img width="31%" src="assets/dossier/linkedin.svg" alt="LinkedIn"></a> <a href="mailto:vishvadharmansaminathan@gmail.com"><img width="31%" src="assets/dossier/email.svg" alt="Email"></a></p>
+<p align="center"><a href="https://vishvadharman-portfolio.vercel.app/?build=1"><picture><source media="(max-width: 767px)" srcset="assets/dossier/portfolio-mobile.svg"><img width="31%" src="assets/dossier/portfolio.svg" alt="Portfolio"></picture></a> <a href="https://www.linkedin.com/in/vishvasami23/"><picture><source media="(max-width: 767px)" srcset="assets/dossier/linkedin-mobile.svg"><img width="31%" src="assets/dossier/linkedin.svg" alt="LinkedIn"></picture></a> <a href="mailto:vishvadharmansaminathan@gmail.com"><picture><source media="(max-width: 767px)" srcset="assets/dossier/email-mobile.svg"><img width="31%" src="assets/dossier/email.svg" alt="Email"></picture></a></p>
 
 <a href="https://vishvadharman-portfolio.vercel.app/#about"><picture><source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/dossier/intro-mobile-still.svg"><source media="(prefers-reduced-motion: reduce)" srcset="assets/dossier/intro-still.svg"><source media="(max-width: 767px)" srcset="assets/dossier/intro-mobile.svg"><img width="100%" src="assets/dossier/intro.svg" alt="About me. VIT CHENNAI  /  MAVDERO TECHSERVICES. I’m in my final year of B.Tech in AI and ML at VIT Chennai. As an AI intern at Mavdero TechServices, I work on document comparison and care about whether a reviewer can trace a flagged change back to the source. ABOUT ME."></picture></a>
 
@@ -39,7 +39,7 @@
 
 <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/dossier/toolkit-mobile-still.svg"><source media="(prefers-reduced-motion: reduce)" srcset="assets/dossier/toolkit-still.svg"><source media="(max-width: 767px)" srcset="assets/dossier/toolkit-mobile.svg"><img width="100%" src="assets/dossier/toolkit.svg" alt="Working toolkit. TOOLS I REACH FOR. Python · PyTorch · FastAPI · Next.js · Redis · Qdrant · Docker"></picture>
 
-<a href="https://github.com/Vishvadharman?tab=overview#js-contribution-activity"><picture><source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/dossier/activity-mobile-still.svg"><source media="(prefers-reduced-motion: reduce)" srcset="assets/dossier/activity-still.svg"><source media="(max-width: 767px)" srcset="assets/dossier/activity-mobile.svg"><img width="100%" src="assets/dossier/activity.svg" alt="GitHub activity. 269 public contributions in the last year. Snapshot 2026-11-09."></picture></a>
+<a href="https://github.com/Vishvadharman?tab=overview#js-contribution-activity"><picture><source media="(prefers-reduced-motion: reduce) and (max-width: 767px)" srcset="assets/dossier/activity-mobile-still.svg"><source media="(prefers-reduced-motion: reduce)" srcset="assets/dossier/activity-still.svg"><source media="(max-width: 767px)" srcset="assets/dossier/activity-mobile.svg"><img width="100%" src="assets/dossier/activity.svg" alt="GitHub activity. 270 public contributions in the last year. Snapshot 2026-11-09."></picture></a>
 
 <img width="100%" src="https://raw.githubusercontent.com/Vishvadharman/Vishvadharman/output/snake.svg" alt="Animated snake tracing Vishvadharman’s GitHub contributions">
 
